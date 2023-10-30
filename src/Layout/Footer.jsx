@@ -44,7 +44,7 @@ const Footer = () => {
                             <h5>Kommende events</h5>
                             {dataE && dataE.slice(0,4).map(e =>
 
-                                <p>&#x3E; {e.title}</p>
+                                <p key={e._id}>&#x3E; {e.title}</p>
 
                             )}
                             

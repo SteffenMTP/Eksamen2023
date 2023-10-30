@@ -8,6 +8,7 @@ import Community from '../components/Community';
 import Goals from '../components/Goals';
 import Interests from '../components/Interests';
 import Testimonials from '../components/Testimonials';
+import Events from '../components/Events';
 
 const Home = () => {
 
@@ -43,6 +44,8 @@ const Home = () => {
         <Goals/>
         <Interests/>
         <Testimonials/>
+        <Events/>
+        
 
     </>
   )

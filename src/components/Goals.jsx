@@ -39,6 +39,9 @@ const Goals = () => {
           <section>
             {dataH[2].content}
           </section>
+          <figure>
+            <img src={"http://localhost:5888/images/hero/" + dataH[2].image} className='Goalpic' alt="" />
+          </figure>
         </div>
       }
       {data && (
