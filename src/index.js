@@ -3,11 +3,18 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import '../node_modules/bootstrap/dist/js/bootstrap.bundle.js.map';
+
+// We import LoginContextProvicer and surround app with it, all components now have access to Context Provider
+import LoginContextProvider from './context/LoginContext';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <LoginContextProvider>
+      <App />
+    </LoginContextProvider>
   </React.StrictMode>
 );
 
