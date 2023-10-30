@@ -9,6 +9,8 @@ import Goals from '../components/Goals';
 import Interests from '../components/Interests';
 import Testimonials from '../components/Testimonials';
 import Events from '../components/Events';
+import Eventtwo from '../components/Eventstwo';
+
 
 const Home = () => {
 
@@ -44,8 +46,8 @@ const Home = () => {
         <Goals/>
         <Interests/>
         <Testimonials/>
-        <Events/>
-        
+        {/* <Events/> */}
+        <Eventtwo/>
 
     </>
   )

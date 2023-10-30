@@ -3,6 +3,8 @@ import Error from '../components/Error';
 import Loader from '../components/Loader';
 // import { FaTwitter, FaFacebook } from 'react-icons/fa'
 
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { fab } from '@fortawesome/free-brands-svg-icons';
 
 import useRequestData from '../hooks/useRequestData';
 
@@ -17,8 +19,10 @@ const Header = () => {
     }, [])
 
     // const iconMappings = {
-    //     'fab fa-facebook': <FaFacebook />,
-    //     'fab fa-twitter': <FaTwitter />,
+    //     'Instagram': fab.faInstagram,
+    //     'Pinterest': fab.faPinterest,
+    //     'Twitter': fab.faTwitter,
+    //     'Facebook': fab.faFacebook,
     // };
 
 
@@ -44,8 +48,9 @@ const Header = () => {
                             {data.some.map(d =>
                                 <span key={d._id}>
                                     {d.name}
+                                    {/* <FontAwesomeIcon icon={"fa"[d.name]}/> */}
                                 </span>
-                                )}
+                            )}
                         </div>
 
                     </section>
