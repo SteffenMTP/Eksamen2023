@@ -6,6 +6,8 @@ import Loader from '../components/Loader';
 import useRequestData from '../hooks/useRequestData';
 import Community from '../components/Community';
 import Goals from '../components/Goals';
+import Interests from '../components/Interests';
+import Testimonials from '../components/Testimonials';
 
 const Home = () => {
 
@@ -39,6 +41,8 @@ const Home = () => {
 
         <Community/>
         <Goals/>
+        <Interests/>
+        <Testimonials/>
 
     </>
   )

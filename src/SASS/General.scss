@@ -1,7 +1,23 @@
 
 @import "variables";
 
+$primary: $blush;
 
+
+footer{
+    background-color: #261C2C;
+
+    .logofooter{
+        width: 200px;
+    }
+
+    .GalleryImg{
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+}
 
 
 
