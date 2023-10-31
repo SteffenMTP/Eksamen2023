@@ -34,7 +34,7 @@ const Home = () => {
       {data &&
         <div className='container row'>
           <section className='col-6'>
-            <h1>{data[0].title}</h1>
+            <h1 className='Bold'>{data[0].title}</h1>
             <p>{data[0].content}</p>
             <button className='btn btn-primary'>{data[0].buttontext}</button>
           </section>

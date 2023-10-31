@@ -54,11 +54,11 @@ const Community = () => {
                             <h3 className='Highlight'>{data.suptitle}</h3>
                             <h2 className='Bold'>{data.title}</h2>
                             <p>{data.content}</p>
-                            <div className="row row-cols-1 row-cols-md-2 g-2">
+                            <div className="row row-cols-md-2">
 
                                 {data.keypoints.map(k =>
                                     <div className='row' key={k._id}>
-                                        <div className='col-md-6'>
+                                        <div>
                                             <p> &#x2713; {k.keypoint}</p>
                                         </div>
                                     </div>

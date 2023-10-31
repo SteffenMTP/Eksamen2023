@@ -51,10 +51,9 @@ const Goals = () => {
             {data.map((g) => (
               <div key={g._id} className='col-3'>
                 <div className=''>
-                  <i>{g.icon}</i>
-                  {/* <FontAwesomeIcon icon={g.icon}/> */}
-                  <p className='text-3xl'>{g.goalcount}</p>
-                  <p>{g.goal}</p>
+                  <FontAwesomeIcon icon={g.icon}/>
+                  <p className='Goalcount'>{g.goalcount}</p>
+                  <p className='Highlight'>{g.goal}</p>
                 </div>
               </div>
             ))}

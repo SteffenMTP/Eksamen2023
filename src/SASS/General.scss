@@ -70,10 +70,11 @@ h2 {
 }
 
 footer{
-    background-color: #261C2C;
+    background-color: $delft_blue;
+    background-image: url("../assets/backgrounds_and_patterns/pattern1.png");
 
     .logofooter{
-        width: 200px;
+        width: 150px;
     }
 
     .GalleryImg{
@@ -91,6 +92,11 @@ footer{
     min-height: 300px;
     border-radius: 10px;
     background-image: url("../assets/backgrounds_and_patterns/bg1.jpg");
+
+    .Goalcount{
+        font-size: 75px;
+    }
+
 }
 
 .Goalpic{

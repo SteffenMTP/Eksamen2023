@@ -2,6 +2,7 @@ import { React, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import Error from '../components/Error';
 import Loader from '../components/Loader';
+import {FaBuilding, FaEnvelope} from 'react-icons/fa';
 
 import '../SASS/General.scss';
 
@@ -34,10 +35,12 @@ const Footer = () => {
                 <footer className="py-5">
                     <div className="row justify-content-between">
                         <div className="col-6 col-md-3 mb-3 text-white">
+                            <Link to="/">
                             <img src="./logo.png" alt="Bikelane logo" className='logofooter' />
+                            </Link>
                             <p>{data.companypayoff}</p>
-                            <address>Klubhuset: {data.address}, {data.zipcity}</address>
-                            <p>{data.email}</p>
+                            <FaBuilding/><address>Klubhuset: {data.address}, {data.zipcity}</address>
+                            <FaEnvelope/><p>{data.email}</p>
                         </div>
 
                         <div className="col-6 col-md-3 mb-3 text-white">
