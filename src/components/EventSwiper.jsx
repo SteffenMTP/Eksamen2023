@@ -44,10 +44,14 @@ const EventSwiper = () => {
       {/*Data*/}
       {data && dataE &&
         <>
-          <section className='EventPattern position-relative'>
+          <section className='EventPattern position-relative row'>
+            <div className='col-10' >
             <h3 className='Highlight'>{data[5].suptitle}</h3>
             <h2>{data[5].title}</h2>
+            </div>
+            <div className='col-2'>
             <button className='btn btn-primary'>{data[5].buttontext}</button>
+            </div>
             <div className='position-relative top-0'>
 
               <Swiper
@@ -70,7 +74,7 @@ const EventSwiper = () => {
                 {dataE.map(e =>
 
                   <SwiperSlide>
-                    <img src={"http://localhost:5888/images/event/" + e.image} alt={e.category} />
+                    <img src={"http://localhost:5888/images/event/" + e.image} alt={e.category} className='postion-relative' />
                     <small className='Highlight'>{e.category.category}: {e.title}</small>
                     <p>Lokation: {e.destination}</p>
                   </SwiperSlide>

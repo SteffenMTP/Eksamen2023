@@ -1,9 +1,12 @@
-import { React, useEffect } from 'react'
+import { React, useEffect, useState } from 'react'
 import Error from '../components/Error';
 import Loader from '../components/Loader';
+import CountUp from 'react-countup';
+import ScrollTrigger from 'react-scroll-trigger';
 
 import useRequestData from '../hooks/useRequestData';
 
+//FONT AWESOME
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 import { faCrown, faBiking, faMap, faHandshake, faPlayCircle } from '@fortawesome/free-solid-svg-icons';
@@ -11,8 +14,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 library.add(fab, faCrown, faBiking, faMap, faHandshake)
 
-
 const Goals = () => {
+
+  const [counterOn, setCounterOn] = useState(false)
 
   const { error: errorH, loading: loadingH, data: dataH, makeRequest: makeRequestH } = useRequestData();
   const { error, loading, data, makeRequest } = useRequestData();
@@ -52,9 +56,13 @@ const Goals = () => {
               <div key={g._id} className='col-3 mt-5 text-center'>
 
                 <div className='GoalBg mx-auto'>
-                  <FontAwesomeIcon icon={g.icon} className='GoalIcon mt-2'/>
+                  <FontAwesomeIcon icon={g.icon} className='GoalIcon mt-2' />
                 </div>
-                <p className='Goalcount'>{g.goalcount}</p>
+                <ScrollTrigger onEnter={() => setCounterOn(true)} onExit={() => setCounterOn(false)}>
+                  {counterOn &&
+                    <CountUp className='Goalcount' start={0} end={g.goalcount} duration={2} delay={0} />
+                  }
+                </ScrollTrigger>
                 <p className='Highlight'>{g.goal}</p>
 
               </div>

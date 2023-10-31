@@ -29,10 +29,12 @@ const Testimonials = () => {
             {/*Data*/}
             {dataH &&
                 <section>
-                    <div className='d-flex'>
+                    <div className='row'>
+                        <div className='col-6'>
                         <h3 className='Highlight'>{dataH[8].suptitle}</h3>
                         <h2 className='Bold'>{dataH[8].title}</h2>
-                    <div className='d-flex'>
+                        </div>
+                    <div className='col-6'>
                         <p>{dataH[8].content}</p>
                     </div>
                     </div>
