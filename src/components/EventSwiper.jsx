@@ -32,10 +32,10 @@ const EventSwiper = () => {
   return (
     <>
       {/*Error*/}
-      {error && <Error />}
+      {(error || errorE) && <Error />}
 
       {/*Loading*/}
-      {loading && <Loader />}
+      {(loading || loadingE) && <Loader />}
 
       {/*Data*/}
       {data && dataE &&
@@ -69,7 +69,7 @@ const EventSwiper = () => {
 
                 {dataE.map(e =>
 
-                  <SwiperSlide>
+                  <SwiperSlide key={e._id}>
                     <img src={"http://localhost:5888/images/event/" + e.image} alt={e.category} className='postion-relative' />
                     <small className='Highlight'>{e.category.category}: {e.title}</small>
                     <p>Lokation: {e.destination}</p>

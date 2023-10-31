@@ -1,7 +1,8 @@
 import { React, useEffect } from 'react'
 import Error from '../components/Error';
 import Loader from '../components/Loader';
-import {PiClockAfternoon,   } from 'react-icons/pi';
+import {PiClockAfternoon, PiEnvelopeSimple, PiBuildings} from 'react-icons/pi';
+import {LiaMapMarkerAltSolid} from 'react-icons/lia';
 
 import useRequestData from '../hooks/useRequestData';
 
@@ -24,10 +25,10 @@ const Contact = () => {
     <>
 
       {/*Error*/}
-      {error && <Error />}
+      {(error || errorC) && <Error />}
 
       {/*Loading*/}
-      {loading && <Loader />}
+      {(loading || loadingC) && <Loader />}
 
       {/*Data*/}
       {data && dataC &&
@@ -36,16 +37,16 @@ const Contact = () => {
             <h3>{data[4].suptitle}</h3>
             <h2>{data[4].title}</h2>
             <figure>
-              <img src={"http://localhost:5888/images/hero/" + data[4].image} alt="An image of bikerows" />
+              {/* <img src={"http://localhost:5888/images/hero/" + data[4].image} alt="An image of bikerows" /> */}
             </figure>
           </section>
 
           <div className='row'>
             <div className='col-2 infoCon'>
-              <p>Klubhuset I Grenaa</p>
-              <address>{dataC.address}, {dataC.zipcity}</address>
-              <p>{dataC.openinghours}</p>
-              <p>{dataC.email}</p>
+            <p><span><PiBuildings/></span> Klubhuset I Grenaa</p>
+              <address><span><LiaMapMarkerAltSolid/></span> {dataC.address}, {dataC.zipcity}</address>
+              <p><span><PiClockAfternoon/></span> {dataC.openinghours}</p>
+              <p><span><PiEnvelopeSimple/></span> {dataC.email}</p>
             </div>
             <div className='col-10 mb-5'>
               <form className='form-control d-flex flex-column'>

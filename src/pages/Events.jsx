@@ -84,7 +84,7 @@ const Events = () => {
               <div className='col-8 d-flex'>
                 {dataS.map(s=>
 
-                    <figure>
+                    <figure key={s._id}>
                       <img src={"http://localhost:5888/images/sponsor/" + s.logo} className='sponsorlogos me-5' alt="Sponsor logos" />
                     </figure>
                   
