@@ -51,8 +51,8 @@ const Community = () => {
                             />
                         </div>
                         <div className='col-6'>
-                            <h3>{data.suptitle}</h3>
-                            <h2>{data.title}</h2>
+                            <h3 className='Highlight'>{data.suptitle}</h3>
+                            <h2 className='Bold'>{data.title}</h2>
                             <p>{data.content}</p>
                             <div className="row row-cols-1 row-cols-md-2 g-2">
 

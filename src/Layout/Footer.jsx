@@ -54,7 +54,7 @@ const Footer = () => {
                             <h5>Indhold</h5>
                             <ul className="nav flex-column">
                                 <Link to="/aboutus" className="nav-foot-item mb-2 text-decoration-none">&#x3E; Om os</Link>
-                                <Link to="/" className="nav-foot-item mb-2 text-decoration-none">&#x3E; Events</Link>
+                                <Link to="/event" className="nav-foot-item mb-2 text-decoration-none">&#x3E; Events</Link>
                                 <Link to="/contact" className="nav-foot-item mb-2 text-decoration-none">&#x3E; Kontakt</Link>
                                 <Link to="/news" className="nav-foot-item mb-2 text-decoration-none">&#x3E; Nyheder</Link>
                             </ul>

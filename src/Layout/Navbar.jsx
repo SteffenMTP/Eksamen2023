@@ -38,8 +38,8 @@ const Navbar = () => {
                             <li className="nav-item dropdown">
                                 <span className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Events</span>
                                 <ul className="dropdown-menu">
-                                    <li><NavLink className="dropdown-item" to="/Users">Event 1</NavLink></li>
-                                    <li><NavLink className="dropdown-item" to="/Users">Event 2</NavLink></li>
+                                    <li><NavLink className="dropdown-item" to="/event">Event 1</NavLink></li>
+                                    <li><NavLink className="dropdown-item" to="/event">Event 2</NavLink></li>
                                 </ul>
                             </li>
 

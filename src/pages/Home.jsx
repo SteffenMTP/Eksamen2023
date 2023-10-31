@@ -10,7 +10,7 @@ import Community from '../components/Community';
 import Goals from '../components/Goals';
 import Interests from '../components/Interests';
 import Testimonials from '../components/Testimonials';
-import Events from '../components/Events';
+import EventSwiper from '../components/EventSwiper';
 
 
 const Home = () => {
@@ -50,7 +50,7 @@ const Home = () => {
         <Goals/>
         <Interests/>
         <Testimonials/>
-        <Events/>
+        <EventSwiper/>
 
     </>
   )

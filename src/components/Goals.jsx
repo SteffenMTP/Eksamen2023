@@ -41,8 +41,8 @@ const Goals = () => {
 
           <section>
 
-            <h3>{dataH[2].suptitle}</h3>
-            <h2>{dataH[2].title}</h2>
+            <h3 className='Highlight'>{dataH[2].suptitle}</h3>
+            <h2 className='Bold'>{dataH[2].title}</h2>
             <p>{dataH[2].content}</p>
 
           </section>
@@ -53,7 +53,7 @@ const Goals = () => {
                 <div className=''>
                   <i>{g.icon}</i>
                   {/* <FontAwesomeIcon icon={g.icon}/> */}
-                  <p>{g.goalcount}</p>
+                  <p className='text-3xl'>{g.goalcount}</p>
                   <p>{g.goal}</p>
                 </div>
               </div>

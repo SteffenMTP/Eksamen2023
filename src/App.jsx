@@ -7,6 +7,7 @@ import Layout from './Layout/Layout.jsx';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs.jsx';
 import Contact from './pages/Contact.jsx';
+import Events from './pages/Events.jsx';
 import News from './pages/News.jsx';
 import NoMatch from './pages/NoMatch.jsx';
 
@@ -28,8 +29,7 @@ function App() {
         <Route path='/' element={<Layout/>}>
           <Route index element={<Home/>}/>
           <Route path="aboutus" element={< AboutUs />} />
-          {/* <Route path="service" element={< Service />} /> */}
-          {/* <Route path="faq" element={< FAQ />} /> */}
+          <Route path="event" element={< Events />} />
           <Route path="news" element={< News />} />
           {/* <Route path="news/:newsID" element={< NewsDetail />} /> */}
           <Route path="contact" element={< Contact />} />

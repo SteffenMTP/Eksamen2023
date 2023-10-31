@@ -35,6 +35,8 @@ $primary: $blush;
 
 }
 
+// OVERALL STYLES //
+
 h1{
     font-family: 'Lexend', sans-serif;
     font-weight: 700;
@@ -45,6 +47,17 @@ h2 {
     font-weight: 600;
 }
 
+.Bold{
+    font-weight: bold;
+}
+
+.Cursive{
+    font-style: italic;
+}
+
+.Highlight{
+    color: $primary;
+}
 
 .ScrollToTopBtn {
     position: fixed;
@@ -92,9 +105,18 @@ footer{
 // TESTIMONIAL SECTION //
 
 .testimonialPic{
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+    height: 500px;
+}
+
+.testimonialText{
+    border-radius: 10px;
+    width: 250px;
+    min-height: 100px;
+    margin-left: 30px;
+    background-color: white;
+    background-image: url("../assets/backgrounds_and_patterns/bg5.jpg");
+    background-size: cover;
+    
 }
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";

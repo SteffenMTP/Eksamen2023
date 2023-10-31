@@ -12,9 +12,13 @@ import '../SASS/Swiper.scss'
 // import required modules
 import { EffectCoverflow, Pagination } from 'swiper/modules';
 
-const Eventtwo = () => {
+const EventSwiper = () => {
   return (
     <>
+
+      <h2>TEST</h2>
+
+
       <Swiper
         effect={'coverflow'}
         grabCursor={true}
@@ -47,4 +51,4 @@ const Eventtwo = () => {
     </>
   );
 }
-export default Eventtwo
+export default EventSwiper
