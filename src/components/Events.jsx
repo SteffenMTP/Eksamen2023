@@ -1,55 +1,50 @@
-import {React, useEffect} from 'react'
-import Error from '../components/Error';
-import Loader from '../components/Loader';
-
-import useRequestData from '../hooks/useRequestData';
-
+import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import 'swiper/scss';
-import 'swiper/scss/navigation';
-import 'swiper/scss/pagination';
+import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/pagination';
 
-const Events = () => {
+import '../SASS/Swiper.scss'
 
-    const { error, loading, data, makeRequest } = useRequestData();
+// import required modules
+import { EffectCoverflow, Pagination } from 'swiper/modules';
 
-    useEffect(() => {
-        makeRequest("events")
-    }, [])
-
-    return (
-        <>
-            {/*Error*/}
-            {error && <Error />}
-
-            {/*Loading*/}
-            {loading && <Loader />}
-
-            {/*Data*/}
-            
-            <Swiper
-                spaceBetween={50}
-                slidesPerView={3}
-                onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => console.log(swiper)}
-            >   
-
-
-                <SwiperSlide>Slide 1</SwiperSlide>
-                <SwiperSlide>Slide 2</SwiperSlide>
-                <SwiperSlide>Slide 3</SwiperSlide>
-                <SwiperSlide>Slide 4</SwiperSlide>
-                ...
-            </Swiper>
-
-
-
-
-        </>
-    )
+const Eventtwo = () => {
+  return (
+    <>
+      <Swiper
+        effect={'coverflow'}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={'auto'}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        modules={[EffectCoverflow, Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+        </SwiperSlide>
+        
+      </Swiper>
+    </>
+  );
 }
-
-export default Events
+export default Eventtwo

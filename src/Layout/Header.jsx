@@ -1,14 +1,16 @@
 import { React, useEffect } from 'react';
 import Error from '../components/Error';
 import Loader from '../components/Loader';
-// import { FaTwitter, FaFacebook } from 'react-icons/fa'
 
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { fab } from '@fortawesome/free-brands-svg-icons';
 
 import useRequestData from '../hooks/useRequestData';
 
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// import { fab } from '@fortawesome/free-brands-svg-icons';
+// import { faCrown, faBiking, faMap, faHandshake } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+// library.add(fab, faCrown, faBiking, faMap, faHandshake)
 
 const Header = () => {
 
@@ -17,13 +19,6 @@ const Header = () => {
     useEffect(() => {
         makeRequest("contactinformation")
     }, [])
-
-    // const iconMappings = {
-    //     'Instagram': fab.faInstagram,
-    //     'Pinterest': fab.faPinterest,
-    //     'Twitter': fab.faTwitter,
-    //     'Facebook': fab.faFacebook,
-    // };
 
 
     return (
