@@ -23,50 +23,52 @@ const Community = () => {
             {/*Data*/}
             {data &&
                 <section className='d-flex'>
-                    <div className='Gallery row'>
-                        <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                    <div className='row'>
+                        <div className="col-lg-3 col-md-12 mb-4 mb-lg-0">
                             <img
                                 src={"http://localhost:5888/images/community/" + data.image1}
                                 className="w-100 shadow-1-strong rounded mb-4"
-                                alt="Boat on Calm Water"
+                                alt="Four images that together create on big image of 3 females riding bicycles"
                             />
 
                             <img
                                 src={"http://localhost:5888/images/community/" + data.image3}
                                 className="w-100 shadow-1-strong rounded mb-4"
-                                alt="Wintry Mountain Landscape"
+                                alt="Four images that together create on big image of 3 females riding bicycles"
                             />
                         </div>
-                        <div className="col-lg-4 mb-4 mb-lg-0">
+                        <div className="col-lg-3 mb-4 mb-lg-0">
                             <img
                                 src={"http://localhost:5888/images/community/" + data.image2}
                                 className="w-100 shadow-1-strong rounded mb-4"
-                                alt="Mountains in the Clouds"
+                                alt="Four images that together create on big image of 3 females riding bicycles"
                             />
 
                             <img
                                 src={"http://localhost:5888/images/community/" + data.image4}
                                 className="w-100 shadow-1-strong rounded mb-4"
-                                alt="Boat on Calm Water"
+                                alt="Four images that together create on big image of 3 females riding bicycles"
                             />
                         </div>
-                    </div>
-                    <div>
-                        <h3>{data.suptitle}</h3>
-                        <h2>{data.title}</h2>
-                        <p>{data.content}</p>
+                        <div className='col-6'>
+                            <h3>{data.suptitle}</h3>
+                            <h2>{data.title}</h2>
+                            <p>{data.content}</p>
+                            <div className="row row-cols-1 row-cols-md-2 g-2">
 
-                        {data.keypoints.map(k =>
-                            <div className='row' key={k._id}>
-                                <div className='col'>
-                                    <p> &#x2713; {k.keypoint}</p>
-                                </div>
+                                {data.keypoints.map(k =>
+                                    <div className='row' key={k._id}>
+                                        <div className='col-md-6'>
+                                            <p> &#x2713; {k.keypoint}</p>
+                                        </div>
+                                    </div>
+
+                                )}
                             </div>
 
-                        )}
+                        </div>
 
                     </div>
-
                 </section>
             }
 

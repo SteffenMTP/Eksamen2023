@@ -4,6 +4,13 @@ import Loader from '../components/Loader';
 
 import useRequestData from '../hooks/useRequestData';
 
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { faCheckSquare, faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fab, faCheckSquare, faCoffee)
+
+
 const Goals = () => {
 
   const { error: errorH, loading: loadingH, data: dataH, makeRequest: makeRequestH } = useRequestData();
@@ -50,6 +57,7 @@ const Goals = () => {
             <div key={g._id} className='col-3'>
               <div className=''>
                 <i>{g.icon}</i>
+                <FontAwesomeIcon icon={g.icon}/>
                 <p>{g.goalcount}</p>
                 <p>{g.goal}</p>
               </div>

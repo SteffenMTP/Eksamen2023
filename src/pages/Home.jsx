@@ -31,14 +31,14 @@ const Home = () => {
 
       {/*Data*/}
       {data &&
-        <div className='container'>
-          <section>
+        <div className='container row'>
+          <section className='col-6'>
             <h1>{data[0].title}</h1>
             <p>{data[0].content}</p>
             <button className='btn btn-primary'>{data[0].buttontext}</button>
           </section>
-          <figure>
-            <img src={"http://localhost:5888/images/hero/" + data[0].image} className='img-fluid' alt="Young man standing with his mountain bike" />
+          <figure className='herocontainer col-6'>
+            <img src={"http://localhost:5888/images/hero/" + data[0].image} className='heroImg' alt="Young man standing with his mountain bike" />
           </figure>
         </div>}
 

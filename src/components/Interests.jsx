@@ -25,28 +25,29 @@ const Interests = () => {
             {data &&
 
                 <section className='d-flex'>
+                    <div className='row'>
 
-                    <div>
-                        <h3>{data.suptitle}</h3>
-                        <h2>{data.title}</h2>
-                        <p>{data.content}</p>
+                        <div className='col-6'>
+                            <h3>{data.suptitle}</h3>
+                            <h2>{data.title}</h2>
+                            <p>{data.content}</p>
+                            <div className="row row-cols-1 row-cols-md-2 g-2">
 
-                        {data.keypoints.map(k =>
-                            <div className='row' key={k._id}>
-                                <div className='col'>
-                                    <i>{k.icon}</i>
-                                    <p>{k.keypoint}</p>
-                                    <p>{k.description}</p>
-                                </div>
+                                {data.keypoints.map(k =>
+                                    <div className='row' key={k._id}>
+                                        <div className='col'>
+                                            <i>{k.icon}</i>
+                                            <p>{k.keypoint}</p>
+                                            <p>{k.description}</p>
+                                        </div>
+                                    </div>
+
+                                )}
                             </div>
 
-                        )}
+                        </div>
 
-                    </div>
-
-
-                    <div className='Gallery row'>
-                        <div className="col-lg-4 col-md-12 mb-4 mb-lg-0">
+                        <div className="col-lg-3 col-md-12 mb-4 mb-lg-0">
                             <img
                                 src={"http://localhost:5888/images/interest/" + data.image1}
                                 className="w-100 shadow-1-strong rounded mb-4"
@@ -59,7 +60,7 @@ const Interests = () => {
                                 alt="Wintry Mountain Landscape"
                             />
                         </div>
-                        <div className="col-lg-4 mb-4 mb-lg-0">
+                        <div className="col-lg-3 mb-4 mb-lg-0">
                             <img
                                 src={"http://localhost:5888/images/interest/" + data.image2}
                                 className="w-100 shadow-1-strong rounded mb-4"
@@ -72,9 +73,11 @@ const Interests = () => {
                                 alt="Boat on Calm Water"
                             />
                         </div>
+
+
+
+
                     </div>
-
-
                 </section>
             }
 
