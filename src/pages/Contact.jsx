@@ -1,6 +1,7 @@
 import { React, useEffect } from 'react'
 import Error from '../components/Error';
 import Loader from '../components/Loader';
+import {PiClockAfternoon,   } from 'react-icons/pi';
 
 import useRequestData from '../hooks/useRequestData';
 
@@ -40,7 +41,7 @@ const Contact = () => {
           </section>
 
           <div className='row'>
-            <div className='col-2'>
+            <div className='col-2 infoCon'>
               <p>Klubhuset I Grenaa</p>
               <address>{dataC.address}, {dataC.zipcity}</address>
               <p>{dataC.openinghours}</p>
@@ -48,17 +49,17 @@ const Contact = () => {
             </div>
             <div className='col-10 mb-5'>
               <form className='form-control d-flex flex-column'>
-                <label htmlFor=""> Navn
-                  <input type="text" className='form-control' name="" id="" />
+                <label htmlFor="name"> Navn
+                  <input type="text" className='form-control' placeholder='Dit navn...' name="name" id="name" />
                 </label>
-                <label htmlFor=""> Email
-                  <input type="email" className='form-control' name="" id="" />
+                <label htmlFor="email"> Email
+                  <input type="email" className='form-control'placeholder='Din email...' name="email" id="email" />
                 </label>
-                <label htmlFor=""> Telefon
-                  <input type="text" className='form-control' name="" id="" />
+                <label htmlFor="phone"> Telefon
+                  <input type="text" className='form-control'placeholder='Dit telefonnummer...' name="phone" id="phone" />
                 </label>
-                <label htmlFor=""> Besked
-                  <textarea name="" className='form-control' id="" cols="30" rows="10"></textarea>
+                <label htmlFor="message"> Besked
+                  <textarea name="message" className='form-control'placeholder='Din besked...' id="message" cols="30" rows="10"></textarea>
                 </label>
                 <div>
                 <button type="submit" className='btn btn-primary'>Send besked</button>
