@@ -2,6 +2,7 @@ import { React, useEffect } from 'react'
 import Error from '../components/Error';
 import Loader from '../components/Loader';
 
+//Import Hook
 import useRequestData from '../hooks/useRequestData';
 
 const Testimonials = () => {
@@ -29,10 +30,10 @@ const Testimonials = () => {
             {dataH &&
                 <section>
                     <div className='d-flex'>
-                        <h3 className='Highlight'>Hvem vi er</h3>
-                        <h2 className='Bold'>Et udvalg af os i klubben</h2>
+                        <h3 className='Highlight'>{dataH[8].suptitle}</h3>
+                        <h2 className='Bold'>{dataH[8].title}</h2>
                     <div className='d-flex'>
-                        <p>Vi er over 1.400 medlemmer og tæller mange forskellige typer - lige fra mitionisten der elsker naturen til den ekstreme biker, hvor det ikke kan blive hurtigt eller farligt nok! Og en masse ind i mellem - og der er selvfølgelig også plads til børn og unge</p>
+                        <p>{dataH[8].content}</p>
                     </div>
                     </div>
                     <div className='Testimonials row row-cols-1 row-cols-md-4 g-2 '>

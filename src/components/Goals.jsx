@@ -49,12 +49,14 @@ const Goals = () => {
 
           <div className='row GoalCounters text-white position-relative'>
             {data.map((g) => (
-              <div key={g._id} className='col-3'>
-                <div className=''>
-                  <FontAwesomeIcon icon={g.icon}/>
-                  <p className='Goalcount'>{g.goalcount}</p>
-                  <p className='Highlight'>{g.goal}</p>
+              <div key={g._id} className='col-3 mt-5 text-center'>
+
+                <div className='GoalBg mx-auto'>
+                  <FontAwesomeIcon icon={g.icon} className='GoalIcon mt-2'/>
                 </div>
+                <p className='Goalcount'>{g.goalcount}</p>
+                <p className='Highlight'>{g.goal}</p>
+
               </div>
             ))}
             <figure className='position-relative'>
