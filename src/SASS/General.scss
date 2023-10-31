@@ -137,4 +137,16 @@ footer{
     
 }
 
+// EVENT SECTION //
+
+.EventPattern{
+    height: 300px;
+    background-image: url("../assets/backgrounds_and_patterns/pattern2.png");
+    background-repeat: repeat; 
+    background-color: $delft_blue;
+    margin-bottom: 250px;
+}
+
+
+
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";

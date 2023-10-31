@@ -22,9 +22,14 @@ import useRequestData from '../hooks/useRequestData';
 const EventSwiper = () => {
 
   const { error, loading, data, makeRequest } = useRequestData();
+  const { error: errorE, loading: loadingE, data: dataE, makeRequest: makeRequestE } = useRequestData();
 
   useEffect(() => {
     makeRequest("heros")
+  }, [])
+
+  useEffect(() => {
+    makeRequestE("events")
   }, [])
 
 
@@ -37,43 +42,48 @@ const EventSwiper = () => {
       {loading && <Loader />}
 
       {/*Data*/}
-      {data &&
+      {data && dataE &&
         <>
-          <section>
-            <h3>{data[5].suptitle}</h3>
+          <section className='EventPattern position-relative'>
+            <h3 className='Highlight'>{data[5].suptitle}</h3>
             <h2>{data[5].title}</h2>
             <button className='btn btn-primary'>{data[5].buttontext}</button>
+            <div className='position-relative top-0'>
+
+              <Swiper
+                effect={'coverflow'}
+                grabCursor={true}
+                loop={true}
+                centeredSlides={true}
+                slidesPerView={'auto'}
+                coverflowEffect={{
+                  rotate: 50,
+                  stretch: 0,
+                  depth: 100,
+                  modifier: 1,
+                  slideShadows: false,
+                }}
+                modules={[EffectCoverflow, Pagination]}
+                className="mySwiper"
+              >
+
+                {dataE.map(e =>
+
+                  <SwiperSlide>
+                    <img src={"http://localhost:5888/images/event/" + e.image} alt={e.category} />
+                    <small className='Highlight'>{e.category.category}: {e.title}</small>
+                    <p>Lokation: {e.destination}</p>
+                  </SwiperSlide>
+
+                )}
+
+              </Swiper>
+            </div>
           </section>
 
-          <Swiper
-            effect={'coverflow'}
-            grabCursor={true}
-            centeredSlides={true}
-            slidesPerView={'auto'}
-            coverflowEffect={{
-              rotate: 50,
-              stretch: 0,
-              depth: 100,
-              modifier: 1,
-              slideShadows: true,
-            }}
-            modules={[EffectCoverflow, Pagination]}
-            className="mySwiper"
-          >
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
-            </SwiperSlide>
 
-          </Swiper>
+
+
         </>
       }
     </>

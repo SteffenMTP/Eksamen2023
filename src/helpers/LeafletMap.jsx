@@ -28,7 +28,7 @@ const LeafletMap = () => {
             <MapContainer
                 center={[56,10]}
                 zoom={10}
-                style={{width: "400px", height: "400px" }}
+                style={{width: "100%", height: "400px" }}
 
             >
                 <TileLayer
