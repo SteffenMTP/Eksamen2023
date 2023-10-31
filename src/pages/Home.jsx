@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 
 import useRequestData from '../hooks/useRequestData';
+
 import Community from '../components/Community';
 import Goals from '../components/Goals';
 import Interests from '../components/Interests';

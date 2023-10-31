@@ -26,12 +26,8 @@ const EventSwiper = () => {
 
   useEffect(() => {
     makeRequest("heros")
-  }, [])
-
-  useEffect(() => {
     makeRequestE("events")
   }, [])
-
 
   return (
     <>

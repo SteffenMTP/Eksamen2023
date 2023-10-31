@@ -148,6 +148,20 @@ footer{
     margin-top: 100px;
 }
 
+// ABOUT US //
 
+.aboutContainer{
+    background-image: url("../assets/backgrounds_and_patterns/pattern2.png");
+    background-repeat: repeat; 
+    background-color: $delft_blue; 
+}
+
+// EVENTS //
+
+.sponsorlogos{
+    width: 100px;
+    height: 100px;
+    
+}
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";

@@ -12,9 +12,6 @@ const Testimonials = () => {
 
     useEffect(() => {
         makeRequest("testimonials")
-    }, [])
-
-    useEffect(() => {
         makeRequestH("heros")
     }, [])
 
@@ -28,7 +25,7 @@ const Testimonials = () => {
 
             {/*Data*/}
             {dataH &&
-                <section>
+                <section className='mb-5'>
                     <div className='row'>
                         <div className='col-6'>
                         <h3 className='Highlight'>{dataH[8].suptitle}</h3>

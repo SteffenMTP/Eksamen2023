@@ -15,9 +15,6 @@ const Footer = () => {
 
     useEffect(() => {
         makeRequest("contactinformation")
-    }, [])
-
-    useEffect(() => {
         makeRequestE("events")
     }, [])
 

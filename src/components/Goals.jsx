@@ -23,9 +23,6 @@ const Goals = () => {
 
   useEffect(() => {
     makeRequest("goals")
-  }, [])
-
-  useEffect(() => {
     makeRequestH("heros")
   }, [])
 
