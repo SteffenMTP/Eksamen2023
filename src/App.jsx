@@ -29,6 +29,9 @@ import EventEdit from './pages/admin/Event/EventEdit.jsx';
 import GoalsAdmin from './pages/admin/Goals/GoalAdmin.jsx';
 import GoalsEdit from './pages/admin/Goals/GoalsEdit.jsx';
 
+// HERO FRONT
+import HeroFront from './pages/admin/Frontpage/HeroFront.jsx';
+
 
 
 function App() {
@@ -67,6 +70,9 @@ function App() {
           {/* GOALS */}
           <Route path='goalsadmin' element={<GoalsAdmin/>}/>
           <Route path='goalsadmin/edit/:goalID' element={<GoalsEdit/>}/>
+
+          {/* HERO FRONTPAGE */}
+          <Route path='herosfront' element={<HeroFront/>}/>
 
           <Route path="*" element={<NoMatch />} />
 

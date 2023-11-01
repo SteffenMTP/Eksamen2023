@@ -22,7 +22,7 @@ const AdminNavbar = () => {
                             <Link to="goalsadmin" className="nav-link">GOALS - ADMIN</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="aboutadmin" className="nav-link">FORSIDE HERO - ADMIN</Link>
+                            <Link to="herosfront" className="nav-link">FORSIDE HERO - ADMIN</Link>
                         </li>
                         <li><Logout /></li>
                     </ul>

@@ -47,7 +47,7 @@ const GoalsEdit = () => {
     // Is Edit made then navigate user back to the adminpage
     useEffect(() => {
         if (dataEdit) {
-            navigate("/admin/goaladmin")
+            navigate("/admin/goalsadmin")
         }
 
     }, [dataEdit])
