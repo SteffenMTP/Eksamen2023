@@ -60,16 +60,16 @@ const HeroFront = () => {
             {data &&
 
                 <form onSubmit={handleSubmit} className='form-control d-flex flex-column'>
-                    <label> subject
-                        <input type="text" defaultValue={data.subject} className='form-control' name="" id="" />
+                    <label> Emne
+                        <input type="text" defaultValue={data.subject} className='form-control' name="subject" />
                     </label>
-                    <label> suptitle
-                        <input type="text" defaultValue={data.suptitle} className='form-control' name="" id="" />
+                    <label> Suptitle
+                        <input type="text" defaultValue={data.suptitle} className='form-control' name="suptitle" />
                     </label>
-                    <label> title
-                        <input type="text" defaultValue={data.title} className='form-control' name="" id="" />
+                    <label> Titel
+                        <input type="text" defaultValue={data.title} className='form-control' name="title" />
                     </label>
-                    <label>
+                    <label> Beskrivelse
                         <ReactQuill
                             theme="snow"
                             placeholder='Nyhedstekst'
@@ -82,6 +82,7 @@ const HeroFront = () => {
 
                     <div>
                         <p>Nuværende billede:</p>
+                        <img src={"http://localhost:5888/images/hero/" + data.image} style={{width: 400}} alt={data.title} />
                     </div>
 
                     <label> Vælg evt. et nyt billede (Overskriver det nuværende billede)
