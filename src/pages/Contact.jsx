@@ -33,36 +33,36 @@ const Contact = () => {
       {/*Data*/}
       {data && dataC &&
         <>
-          <section>
+          <section className='text-center'>
             <h3>{data[4].suptitle}</h3>
-            <h2>{data[4].title}</h2>
+            <h2 className='Bold'>{data[4].title}</h2>
             <figure>
-              {/* <img src={"http://localhost:5888/images/hero/" + data[4].image} alt="An image of bikerows" /> */}
+              <img src={"http://localhost:5888/images/hero/" + data[4].image} alt="An image of bikerows" />
             </figure>
           </section>
 
           <div className='row'>
-            <div className='col-2 infoCon'>
-            <p><span><PiBuildings/></span> Klubhuset I Grenaa</p>
-              <address><span><LiaMapMarkerAltSolid/></span> {dataC.address}, {dataC.zipcity}</address>
-              <p><span><PiClockAfternoon/></span> {dataC.openinghours}</p>
-              <p><span><PiEnvelopeSimple/></span> {dataC.email}</p>
+            <div className='col-3 infoCon p-3'>
+            <p><span className='infoLogoBg rounded-circle p-1'><PiBuildings className='IconHighlight'/></span> Klubhuset I Grenaa</p>
+              <address><span className='infoLogoBg rounded-circle p-1'><LiaMapMarkerAltSolid className='IconHighlight'/></span> {dataC.address}, {dataC.zipcity}</address>
+              <p><span className='infoLogoBg rounded-circle p-1'><PiClockAfternoon className='IconHighlight'/></span> {dataC.openinghours}</p>
+              <p><span className='infoLogoBg rounded-circle p-1'><PiEnvelopeSimple className='IconHighlight'/></span> {dataC.email}</p>
             </div>
-            <div className='col-10 mb-5'>
+            <div className='col-9 mb-5'>
               <form className='form-control d-flex flex-column'>
                 <label htmlFor="name"> Navn
-                  <input type="text" className='form-control' placeholder='Dit navn...' name="name" id="name" />
+                  <input type="text" className='form-control' required placeholder='Dit navn...' name="name" id="name" />
                 </label>
                 <label htmlFor="email"> Email
-                  <input type="email" className='form-control'placeholder='Din email...' name="email" id="email" />
+                  <input type="email" className='form-control' pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" required placeholder='Din email...' name="email" id="email" />
                 </label>
                 <label htmlFor="phone"> Telefon
-                  <input type="text" className='form-control'placeholder='Dit telefonnummer...' name="phone" id="phone" />
+                  <input type="text" className='form-control' required placeholder='Dit telefonnummer...' name="phone" id="phone" />
                 </label>
                 <label htmlFor="message"> Besked
-                  <textarea name="message" className='form-control'placeholder='Din besked...' id="message" cols="30" rows="10"></textarea>
+                  <textarea name="message" className='form-control' required placeholder='Din besked...' id="message" rows="5"></textarea>
                 </label>
-                <div>
+                <div className='my-2'>
                 <button type="submit" className='btn btn-primary'>Send besked</button>
                 </div>
               </form>

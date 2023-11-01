@@ -169,7 +169,17 @@ footer{
 .infoCon{
     width: 100%;
     height: 200px;
-    background-color: $silver;
+    background-color: #f4f5fa;
+
+    .infoLogoBg{
+        background-color: #f9eaed;
+    }
+
+    .IconHighlight{
+        color: $primary;
+    }
+
 }
+
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
