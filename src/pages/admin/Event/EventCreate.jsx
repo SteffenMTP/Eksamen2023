@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import useRequestData from '../../../hooks/useRequestData';
 import Loader from '../../../components/Loader';
@@ -10,34 +10,42 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
 
-
 const EventCreate = () => {
+  
+  // POST to EVENTS
+  const { error, loading, data, makeRequest } = useRequestData();
+  // GET CATEGORIES
+  const { error: errorC, loading: loadingC, data: dataC, makeRequest: makeRequestC } = useRequestData();
+  
+  //state til at rumme kategori (fra inputfelt)
+  const [category, setCategory] = useState()
+  
+  useEffect(() => {
+    makeRequestC("eventcategories")
+  }, [])
+  
 
-  // POST data
-  const { loading, error, data, makeRequest } = useRequestData();
 
   // Reference til quill
   const refQuill = useRef();
-  const toolbarOptions = ['bold', 'italic', 'underline', 'strike'];
-  // Kan evt. skrives således hvis der ønskes lidt form for gruppering.
-  // const toolbarOptions = [['bold', 'italic', 'underline', 'strike'], [{'list': 'ordered'}, {'list': 'bullet'}]];
+  const toolbarOptions = [['bold', 'italic', 'underline', 'strike'], [{'list': 'ordered'}, {'list': 'bullet'}]];
 
   const handleSubmit = (e) => {
-    e.preventDefault() // Stop reload af side
+    e.preventDefault() // STOP RELOAD OF PAGE
 
-    // Send formdata til API'et - som POST - e.target er fomularens indhold 
+    // SEND TO API - AS POST 
     let fd = new FormData(e.target)
     fd.append("content", refQuill.current.value)
 
     console.log(refQuill.current.value)
 
-    makeRequest("news/admin", null, null, "POST", fd)
+    makeRequest("events/admin", null, null, "POST", fd)
 
-    // Tøm formularen - OBS! Tømmes uanset om der er fejl eller ej - benyt evt. useEffect til at lytte på Data?
+    // EMPTIES FORM REGARDSLESS OF SUCCESS OR NOT {TO DO - BENYT EVT. UseEffect til at lytte på ændringer}
     e.target.reset();
-    // Tøm quill
+    
+    // EMPTY QUILL
     refQuill.current.getEditor().setText("")
-
 
   }
 
@@ -45,7 +53,7 @@ const EventCreate = () => {
     <div>
 
 
-      <h1>Opret ny nyhed</h1>
+      <h1>Opret nyt event</h1>
 
       {/* Loading */}
       {loading && <Loader />}
@@ -53,16 +61,15 @@ const EventCreate = () => {
       {/* Error */}
       {error && <Error />}
 
-      {data && <h3>Ny er oprettet</h3>}
+      {data && <h3>Nyt event er oprettet</h3>}
 
       <form onSubmit={handleSubmit} className='form-group d-flex flex-column'>
 
-        <label> Nyhedens titel
+        <label> Eventets titel
           <input type="text" name='title' placeholder='Titel' className='form-control my-3' required />
         </label>
 
-        <label > Nyhedens tekst
-          {/* <textarea name="content" id="content" placeholder='Nyhedstekst' className='form-control'></textarea> */}
+        <label > Eventets tekst
 
           <ReactQuill
             theme="snow"
@@ -73,35 +80,47 @@ const EventCreate = () => {
           />
         </label>
 
-        <label> Kategori
+        <label> Vælg kategori
+          <select defaultValue="DEFAULT" onChange={e => setCategory(e.target.value)} className='form-select' name='category'>
+            <option value="DEFAULT" disabled>Vælg en kategori</option>
+            {
+              dataC && dataC.map(c => (
 
+                <option value={c._id} key={c._id}>
+                  {c.category}
+                </option>
+
+              ))
+            }
+
+          </select>
         </label>
 
-        <label> Event Dato
-
+        <label> Event Dato (Vælg dato samt tidspunkt for start)
+            <input type="datetime-local" name="eventdate" className='form-control' required />
         </label>
 
-        <label> Destination
-
+        <label> Destination (Vælg område)
+            <input type="text" name="destination" className='form-control'  required/>
         </label>
 
-        <label> Koordinater
-
+        <label> Koordinater (Skal skrives fx. 53.00, 10.00)
+            <input type="text" name="coordinates" className='form-control' required/>
         </label>
 
-        <label> Distance
-
+        <label> Distance (I hele km)
+            <input type="number" name="distance" className='form-control' required/>
         </label>
 
-        <label> Sværhedsgrad
-
+        <label> Sværhedsgrad (Vælg mellem 1-10)
+            <input type="number" name="difficulty" min={1} max={10} className='form-control' required/>
         </label>
 
         <label> Event billede
-          <input type="file" name="image" className='form-control my-3' />
+          <input type="file" name="image" className='form-control my-3' required/>
         </label>
 
-        <button type="submit" className='form-control my-3 btn btn-primary'>Gem Nyhed</button>
+        <button type="submit" className='form-control my-3 btn btn-primary'>Gem Event</button>
 
 
       </form>

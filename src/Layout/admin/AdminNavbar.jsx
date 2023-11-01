@@ -19,68 +19,15 @@ const AdminNavbar = () => {
                             <Link to="eventadmin" className="nav-link">EVENTS - ADMIN</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="aboutadmin" className="nav-link">About ADMIN</Link>
+                            <Link to="goalsadmin" className="nav-link">GOALS - ADMIN</Link>
                         </li>
-                        <li className="nav-item dropdown">
-                            <span className="nav-link dropdown-toggle" data-bs-toggle="dropdown">Dropdown</span>
-                            <ul className="dropdown-menu">
-                                <li><Link className="dropdown-item" to="/event">Alle</Link></li>
-                                <li className="dropdown-item" href="#">Another action</li>
-                                <li className="dropdown-item" href="#">Something else here</li>
-                            </ul>
+                        <li className="nav-item">
+                            <Link to="aboutadmin" className="nav-link">FORSIDE HERO - ADMIN</Link>
                         </li>
                         <li><Logout /></li>
                     </ul>
                 </div>
             </nav>
-
-
-
-
-
-
-
-            <nav className="navbar navbar-expand-lg justify-content-between">
-                <ul className="navbar-nav">
-                    <li className="nav-item active">
-
-                    </li>
-                    <li className="nav-item">
-
-                    </li>
-                    <li className="nav-item">
-
-                    </li>
-
-
-                </ul>
-            </nav>
-
-
-
-            {/* <div className="container">
-                <nav className="navbar">
-                    <ul className="navbar-nav">
-                        <li className="nav-item">
-
-                        </li>
-
-                        <li className="nav-item">
-                            
-                        </li>
-
-                        <li className="nav-item">
-                            
-                        </li>
-
-                        <li className="nav-item">
-                            <Link to="/">Home</Link>
-                        </li>
-                        
-                    </ul>
-                </nav>
-
-            </div> */}
         </>
 
     )

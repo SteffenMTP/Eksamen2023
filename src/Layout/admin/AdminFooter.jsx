@@ -5,10 +5,10 @@ const AdminFooter = () => {
     return (
         <>
 
-            <footer className="py-5 text-center fixed-bottom">
+            <footer className="py-5 text-center">
                 <div className="row">
                     <div className="col-6 col-md-2 mb-3">
-                        <img src="./logo.png" className='logofooter' alt="Stroem logo" />
+                        <img src="./logo.png" className='logofooter' alt="Bikelane logo" />
                     </div>
                 </div>
 

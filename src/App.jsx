@@ -19,9 +19,15 @@ import NoMatch from './pages/NoMatch.jsx';
 import Login from './pages/Login.jsx';
 import AdminLayout from './Layout/admin/AdminLayout.jsx';
 import HomeAdmin from './pages/admin/HomeAdmin.jsx';
+
+// EVENT
 import EventAdmin from './pages/admin/Event/EventAdmin.jsx';
 import EventCreate from './pages/admin/Event/EventCreate.jsx';
 import EventEdit from './pages/admin/Event/EventEdit.jsx';
+
+// GOALS
+import GoalsAdmin from './pages/admin/Goals/GoalAdmin.jsx';
+import GoalsEdit from './pages/admin/Goals/GoalsEdit.jsx';
 
 
 
@@ -52,17 +58,15 @@ function App() {
         <Route path='/admin' element={<AdminLayout/>}>
 
           <Route index element={<HomeAdmin/>}/>
-
-          {/* booking */}
-          {/* <Route path='bookingadmin'/> */}
           
-          {/* news */}
+          {/* EVENTS */}
           <Route path='eventadmin' element={<EventAdmin/>}/>
           <Route path='eventadmin/create' element={<EventCreate/>}/>
           <Route path='eventadmin/edit/:eventID' element={<EventEdit/>}/>
           
-          {/* about */}
-          {/* <Route path='aboutadmin' element={<AboutAdmin/>}/> */}
+          {/* GOALS */}
+          <Route path='goalsadmin' element={<GoalsAdmin/>}/>
+          <Route path='goalsadmin/edit/:goalID' element={<GoalsEdit/>}/>
 
           <Route path="*" element={<NoMatch />} />
 
