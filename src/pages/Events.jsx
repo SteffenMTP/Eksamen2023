@@ -3,6 +3,7 @@ import Error from '../components/Error';
 import Loader from '../components/Loader';
 
 import { Link } from 'react-router-dom';
+import Parse from 'html-react-parser';
 
 import useRequestData from '../hooks/useRequestData';
 
@@ -63,6 +64,7 @@ const Events = () => {
                 <div className='card-body'>
                   <p>{new Date(e.eventdate).toLocaleString("da-dk", { day: "numeric", month: "long", year: "numeric" })} | Målgruppe: {e.category.category}</p>
                   <h4 className='Bold'>{e.title}</h4>
+                  <p>{Parse(e.content.slice(0,90))}...</p>
                   <Link to={"/event/" + e._id}><button className='btn btn-secondary'>Se mere</button></Link>
                 </div>
               </div>

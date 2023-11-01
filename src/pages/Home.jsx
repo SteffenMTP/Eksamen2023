@@ -1,6 +1,7 @@
 import { React, useEffect } from 'react'
 import Error from '../components/Error';
 import Loader from '../components/Loader';
+import { Link } from 'react-router-dom';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
@@ -37,7 +38,7 @@ const Home = () => {
           <section className='col-6'>
             <h1 className='Bold'>{data[0].title}</h1>
             <p>{data[0].content}</p>
-            <button className='btn btn-primary'>{data[0].buttontext}</button>
+            <Link to="/contact"><button className='btn btn-primary'>{data[0].buttontext}</button></Link>
           </section>
           <figure className='herocontainer col-6 position-relative'>
           <div>

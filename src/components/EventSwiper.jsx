@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Error from '../components/Error';
 import Loader from '../components/Loader';
+import { Link } from 'react-router-dom';
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -46,7 +47,7 @@ const EventSwiper = () => {
             <h2>{data[5].title}</h2>
             </div>
             <div className='col-2'>
-            <button className='btn btn-primary'>{data[5].buttontext}</button>
+            <Link to="/event"><button className='btn btn-primary'>{data[5].buttontext}</button></Link>
             </div>
             <div className='position-relative top-0'>
 
