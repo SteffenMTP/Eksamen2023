@@ -8,7 +8,10 @@ import Home from './pages/Home';
 import AboutUs from './pages/AboutUs.jsx';
 import Contact from './pages/Contact.jsx';
 import Events from './pages/Events.jsx';
+import EventsDetail from './pages/EventsDetail.jsx';
 import News from './pages/News.jsx';
+import NewsDetail from './pages/NewsDetail.jsx';
+
 import NoMatch from './pages/NoMatch.jsx';
 
 import Login from './pages/Login.jsx';
@@ -30,8 +33,9 @@ function App() {
           <Route index element={<Home/>}/>
           <Route path="aboutus" element={< AboutUs />} />
           <Route path="event" element={< Events />} />
+          <Route path="event/:eventID" element={< EventsDetail />} />
           <Route path="news" element={< News />} />
-          {/* <Route path="news/:newsID" element={< NewsDetail />} /> */}
+          <Route path="news/:newsID" element={< NewsDetail />} />
           <Route path="contact" element={< Contact />} />
 
           <Route path='login' element={<Login/>}/>

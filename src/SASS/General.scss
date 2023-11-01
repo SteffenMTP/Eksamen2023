@@ -11,8 +11,9 @@ html {
     padding: 0;
 }
 
-
 $primary: $blush;
+
+
 
 .herocontainer{
     width: 600px;
@@ -164,7 +165,20 @@ footer{
     
 }
 
+.contactSectionE{
+    height: 300px;
+    background-color: $dark_purple;
+}
+
 // CONTACT //
+
+.contactSection{
+    width: 100%;
+    height: 500px;
+    margin-bottom: 450px;
+    background-color: $delft_blue;
+    background-image: url("../assets/backgrounds_and_patterns/bg1.jpg");
+}
 
 .infoCon{
     width: 100%;

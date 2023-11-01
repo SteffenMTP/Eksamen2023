@@ -28,8 +28,8 @@ const AboutUs = () => {
         <>
         <section className='row'>
           <div className='col-6'>
-            <h3>{data[1].suptitle}</h3>
-            <h2>{data[1].title}</h2>
+            <h3 className='Highlight'>{data[1].suptitle}</h3>
+            <h2 className='Bold'>{data[1].title}</h2>
           </div>
           <div className='col-6'>
             <p>{data[1].content}</p>
