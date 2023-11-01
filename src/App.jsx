@@ -14,11 +14,14 @@ import NewsDetail from './pages/NewsDetail.jsx';
 
 import NoMatch from './pages/NoMatch.jsx';
 
+
+// ADMIN PAGES
 import Login from './pages/Login.jsx';
 import AdminLayout from './Layout/admin/AdminLayout.jsx';
 import HomeAdmin from './pages/admin/HomeAdmin.jsx';
-
-
+import EventAdmin from './pages/admin/Event/EventAdmin.jsx';
+import EventCreate from './pages/admin/Event/EventCreate.jsx';
+import EventEdit from './pages/admin/Event/EventEdit.jsx';
 
 
 
@@ -54,9 +57,9 @@ function App() {
           {/* <Route path='bookingadmin'/> */}
           
           {/* news */}
-          {/* <Route path='newsadmin' element={<NewsAdmin/>}/>
-          <Route path='newsadmin/create' element={<NewsCreate/>}/>
-          <Route path='newsadmin/edit/:newsID' element={<NewsEdit/>}/> */}
+          <Route path='eventadmin' element={<EventAdmin/>}/>
+          <Route path='eventadmin/create' element={<EventCreate/>}/>
+          <Route path='eventadmin/edit/:eventID' element={<EventEdit/>}/>
           
           {/* about */}
           {/* <Route path='aboutadmin' element={<AboutAdmin/>}/> */}
