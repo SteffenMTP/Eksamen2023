@@ -39,7 +39,7 @@ const EventsDetail = () => {
                     </div>
                     <h1 className='text-center Bold'>{data.title}</h1>
                     <figure>
-                    <img src={"http://localhost:5888/images/event/" + data.image} className='w-100' alt={data.title} />
+                    <img src={"http://localhost:5888/images/event/" + data.image} className='w-100 rounded' alt={data.title} />
                     </figure>
                     <div className='row'>
                     <div className='col-4 DetailInfo p-3'>
@@ -49,7 +49,7 @@ const EventsDetail = () => {
                         <p>Sværhedsgrad: {data.difficulty}</p>
                     </div>
                     <div className='col-8'>
-                        <p>{Parse(data.content)}</p>
+                        <span>{Parse(data.content)}</span>
                     </div>
                     </div>
 

@@ -52,7 +52,7 @@ const Footer = () => {
 
                         </div>
 
-                        <div className="col-6 col-md-2 mb-3 text-white">
+                        <div className="col-6 col-md-1 mb-3 text-white">
                             <h5>Indhold</h5>
                             <ul className="nav flex-column">
                                 <Link to="/aboutus" className="nav-foot-item mb-2 text-decoration-none">&#x3E; Om os</Link>
@@ -67,8 +67,8 @@ const Footer = () => {
                             <div className='row'>
 
                                 {dataE && dataE.slice(0, 6).map(p =>
-                                    <figure className='col-4' key={p._id}>
-                                        <img src={"http://localhost:5888/images/event/" + p.image} className='GalleryImg' alt="Gallery of events" />
+                                    <figure className='col-4 GalleryImg' key={p._id}>
+                                        <img src={"http://localhost:5888/images/event/" + p.image} alt="Gallery of events" />
                                     </figure>
                                 )}
                             </div>

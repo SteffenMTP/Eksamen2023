@@ -3,7 +3,7 @@ import Error from '../components/Error';
 import Loader from '../components/Loader';
 
 import { Link } from 'react-router-dom';
-import Parse from 'html-react-parser';
+// import Parse from 'html-react-parser';
 
 import useRequestData from '../hooks/useRequestData';
 
@@ -60,11 +60,11 @@ const Events = () => {
             {dataE.map(e =>
 
               <div className='card' key={e._id}>
-                <img src={"http://localhost:5888/images/event/" + e.image} alt="Events" />
+                <img src={"http://localhost:5888/images/event/" + e.image} className='rounded EventPic' alt="Events" />
                 <div className='card-body'>
-                  <p>{new Date(e.eventdate).toLocaleString("da-dk", { day: "numeric", month: "long", year: "numeric" })} | Målgruppe: {e.category.category}</p>
+                  <p className='Highlight'>{new Date(e.eventdate).toLocaleString("da-dk", { day: "numeric", month: "long", year: "numeric" })} | Målgruppe: {e.category.category}</p>
                   <h4 className='Bold'>{e.title}</h4>
-                  <p>{Parse(e.content.slice(0,90))}...</p>
+                  {/* <p>{Parse(e.content.slice(0,90))}...</p> */}
                   <Link to={"/event/" + e._id}><button className='btn btn-secondary'>Se mere</button></Link>
                 </div>
               </div>

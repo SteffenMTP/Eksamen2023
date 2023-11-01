@@ -7,47 +7,52 @@ import { LoginContext } from '../context/LoginContext'
 
 const Login = () => {
 
-  const { signIn, adminUser } = useContext( LoginContext )
+  const { signIn, adminUser } = useContext(LoginContext)
 
   // hvis der er en bruger/logget ind så send direkte videre til admin
-  if ( adminUser ) {
+  if (adminUser) {
     return <Navigate to="/admin" replace />
   }
 
   // Håndter loginformularens submit
-  const handleLogin = ( e ) => {
+  const handleLogin = (e) => {
 
     e.preventDefault()
     // simulerer login
-    signIn( e.target.email.value )
+    signIn(e.target.email.value)
 
   }
 
 
   return (
-    <div className="Login">
+    <>
+      <div className='row'>
 
-      <h1>Login</h1>
+        <h1>Login</h1>
 
-      <form onSubmit={ handleLogin }>
+        <div className='col-3 mx-auto'>
+          <form onSubmit={handleLogin} className='form-control'>
 
-        <div>
-          <label>Email:
-            <input type="email" name="email" required placeholder="Email" />
-          </label>
+
+            <label>Email:
+              <input type="email" name="email" className='form-control my-2' required placeholder="Email" />
+            </label>
+
+
+
+            <label>Password:
+              <input type="password" name="password" className='form-control my-2' required placeholder="Password" />
+            </label>
+
+            <div>
+            <button type="submit" className='btn btn-primary'>Login</button>
+            </div>
+
+          </form>
         </div>
 
-        <div>
-          <label>Password:
-            <input type="password" name="password" required placeholder="Password" />
-          </label>
-        </div>
-
-        <button type="submit">Login</button>
-
-      </form>
-
-    </div>
+      </div>
+    </>
   )
 }
 

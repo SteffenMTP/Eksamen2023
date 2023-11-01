@@ -2,6 +2,8 @@ import { React, useEffect } from 'react'
 import Error from '../components/Error';
 import Loader from '../components/Loader';
 
+import { FaQuoteRight } from 'react-icons/fa';
+
 import useRequestData from '../hooks/useRequestData';
 import Community from '../components/Community';
 import Goals from '../components/Goals';
@@ -40,10 +42,13 @@ const AboutUs = () => {
           </figure>
         </section>
         <article className='row aboutContainer text-white'>
-          <div className='col-6'>
+          <div className='col-6 position-relative'>
           <h3 className='Highlight'>{data[3].suptitle}</h3>
           <h2 className='Bold'>{data[3].title}</h2>
           <p>{data[3].content.slice(0,219)}</p>
+          <div className='quoteBG position-absolute top-50 end-0'>
+            <FaQuoteRight size={50} className='m-3'/>
+          </div>
           </div>
           <div className='col-6'>
             <img src={"http://localhost:5888/images/hero/" + data[3].image} alt="A member expressing his experience with bikelane" />

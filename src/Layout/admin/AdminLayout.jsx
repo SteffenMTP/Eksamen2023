@@ -21,15 +21,12 @@ const AdminLayout = () => {
 
   return (
     <>
-      <Header/>
       <AdminHeader/>
-      <div className="container" >
-
+      
         <main>
           <Outlet />
         </main>
 
-      </div>
       <AdminFooter/>
     </>
   )
