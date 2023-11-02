@@ -59,7 +59,7 @@ const Events = () => {
           <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2'>
             {dataE.map(e =>
 
-              <div className='card' key={e._id}>
+              <div className='card' key={e._id} e={e}>
                 <img src={"http://localhost:5888/images/event/" + e.image} className='rounded EventPic' alt="Events" />
                 <div className='card-body'>
                   <p className='Highlight'>{new Date(e.eventdate).toLocaleString("da-dk", { day: "numeric", month: "long", year: "numeric" })} | Målgruppe: {e.category.category}</p>

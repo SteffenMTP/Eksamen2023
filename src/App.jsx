@@ -31,6 +31,7 @@ import GoalsEdit from './pages/admin/Goals/GoalsEdit.jsx';
 
 // HERO FRONT
 import HeroFront from './pages/admin/Frontpage/HeroFront.jsx';
+import Inquiries from './pages/admin/Inqueries/Inquiries.jsx';
 
 
 
@@ -73,6 +74,9 @@ function App() {
 
           {/* HERO FRONTPAGE */}
           <Route path='herosfront' element={<HeroFront/>}/>
+          
+          {/* INQUIRIES - CONTACT */}
+          <Route path='inquiries' element={<Inquiries/>}/>
 
           <Route path="*" element={<NoMatch />} />
 
