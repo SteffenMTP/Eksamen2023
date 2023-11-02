@@ -11,7 +11,7 @@ const Navbar = () => {
         <nav className="navbar navbar-expand-lg bg-light">
             <div className="container">
                 <Link className="navbar-brand" to="/">
-                    <img src="./logo-black.png" alt="logo" width="80" />
+                    <img src="./logo-black.png" alt="logo" width="100" />
                 </Link>
 
                 {/* Burger Menu */}
@@ -53,8 +53,8 @@ const Navbar = () => {
                             <li className="nav-item">
                                 <NavLink className="nav-link" aria-current="page" to="/news">Nyheder</NavLink>
                             </li>
-
-                            <button className='btn btn-primary'>Gratis Prøveperiode</button>
+                            
+                            <button className='btn btn-primary text-white'>Gratis Prøveperiode</button>
 
                         </ul>
                     </div>

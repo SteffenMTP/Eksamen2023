@@ -17,24 +17,53 @@ $primary: $blush;
 // HEADER & NAV
 
 .navbar {
-    height: 80px;
-    background-color: rgb(244, 241, 241);
+    width: 100%;
+    height: 70px;
+    background-color: rgb(255, 255, 255);
 
-    ul li:hover a{
+
+    .navbar-nav .nav-item:hover {
         color: $primary;
-        background-color: $silver;
+        background-color: #f4f5fa;
         border-bottom: 5px solid $primary;    
     } 
 
+    span {
+        padding: 20px 10px;
+    }
+
+    a{
+       padding: 20px 10px; 
+    }
+
 }
 
-.navbar ul li .active{
+// DROP DROWN NAVBAR
+.navbar .dropdown li ul{
+    display:none;
+    position:absolute;
+    margin: 0;
+    padding: 0;
+    
+    li{
+        background-color: white;
+    }
+
+}
+
+.dropdown .dropdown-menu .dropdown-item:hover{
+    color: $primary;
+}
+
+.navbar .navbar-nav .nav-item .active{
     border-bottom: 5px solid #D45D79;
 
     &:hover{
         color: $primary;
     }
 }
+
+// HOME PAGE
 
 .herocontainer {
     width: 600px;

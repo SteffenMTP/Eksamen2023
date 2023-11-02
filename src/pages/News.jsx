@@ -9,9 +9,11 @@ const News = () => {
       <div className='row g-3'>
 
         <div>
-          <form className="form-inline d-flex justify-content-center md-form form-sm">
-            <input className="form-control form-control-sm mr-3 w-75" type="text" placeholder="Søg"
+          
+          <form className="form-inline d-flex justify-content-center md-form form-sm my-2">
+            <input className="form-control form-control-sm mr-3 w-25" type="text" placeholder="Søg"
               aria-label="Search"/>
+              
           </form>
         </div>
 

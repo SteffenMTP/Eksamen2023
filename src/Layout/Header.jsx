@@ -5,12 +5,7 @@ import {FaBuilding, FaCalendarAlt, FaEnvelope} from 'react-icons/fa';
 
 import useRequestData from '../hooks/useRequestData';
 
-// import { library } from '@fortawesome/fontawesome-svg-core';
-// import { fab } from '@fortawesome/free-brands-svg-icons';
-// import { faX, faFace  } from '@fortawesome/free-solid-svg-icons';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
-// library.add(fab, faTwitter, faFacebook, faPinterest, faInstagram)
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Header = () => {
 
@@ -42,8 +37,7 @@ const Header = () => {
                         <div className='SOME justify-content-end'>
                             {data.some.map(d =>
                                 <span key={d._id}>
-                                    {d.name}
-                                    {/* <FontAwesomeIcon icon={d.icon}/> */}
+                                    <FontAwesomeIcon icon={"fab fa" + d.icon}/>
                                 </span>
                             )}
                         </div>
