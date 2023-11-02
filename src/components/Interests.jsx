@@ -2,7 +2,7 @@ import { React, useEffect } from 'react'
 import Error from '../components/Error';
 import Loader from '../components/Loader';
 
-import { Wall, Wind, ProjectorScreenChart, GearSix} from "@phosphor-icons/react";
+import "../assets/Fonts/thin/style.css";
 
 import useRequestData from '../hooks/useRequestData';
 
@@ -38,7 +38,7 @@ const Interests = () => {
                                 {data.keypoints.map(k =>
                                     <div className='row' key={k._id}>
                                         <div className='col'>
-                                            <i>{"ph-"+k.icon}</i>
+                                            <i className={k.icon}></i>
                                             <p>{k.keypoint}</p>
                                             <p>{k.description}</p>
                                         </div>

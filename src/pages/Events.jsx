@@ -1,4 +1,4 @@
-import { React, useEffect } from 'react'
+import { React, useEffect, useState } from 'react'
 import Error from '../components/Error';
 import Loader from '../components/Loader';
 
@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 import useRequestData from '../hooks/useRequestData';
 
 const Events = () => {
+
+  const [category, setCategory] = useState("")
 
   // GET HERO
   const { error, loading, data, makeRequest } = useRequestData();
@@ -109,14 +111,9 @@ const Events = () => {
             </div>
           </div>
 
-
-
         </div >
 
-
       }
-
-
 
     </>
   )

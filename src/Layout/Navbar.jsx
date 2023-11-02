@@ -53,8 +53,9 @@ const Navbar = () => {
                             <li className="nav-item">
                                 <NavLink className="nav-link" aria-current="page" to="/news">Nyheder</NavLink>
                             </li>
-                            
+                            <Link to={"/contact"}>
                             <button className='btn btn-primary text-white'>Gratis Prøveperiode</button>
+                            </Link>
 
                         </ul>
                     </div>

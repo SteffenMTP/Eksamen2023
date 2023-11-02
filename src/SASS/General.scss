@@ -18,7 +18,7 @@ $primary: $blush;
 
 .navbar {
     width: 100%;
-    height: 70px;
+    height: auto;
     background-color: rgb(255, 255, 255);
 
 
@@ -29,13 +29,24 @@ $primary: $blush;
     } 
 
     span {
-        padding: 20px 10px;
+        padding: 15px 10px;
     }
 
     a{
-       padding: 20px 10px; 
+       padding: 15px 10px; 
     }
 
+    .navbar-nav .nav-item .active{
+        border-bottom: 5px solid $primary;  
+    }
+}
+
+.navbar .navbar-nav .nav-item .nav-link .active{
+    border-bottom: 5px solid #D45D79;
+
+    &:hover{
+        color: $primary;
+    }
 }
 
 // DROP DROWN NAVBAR
@@ -55,13 +66,7 @@ $primary: $blush;
     color: $primary;
 }
 
-.navbar .navbar-nav .nav-item .active{
-    border-bottom: 5px solid #D45D79;
 
-    &:hover{
-        color: $primary;
-    }
-}
 
 // HOME PAGE
 
@@ -242,7 +247,7 @@ footer {
 .sponsorlogos {
     width: 100px;
     height: 100px;
-
+    filter: grayscale(100%);
 }
 
 .contactSectionE {

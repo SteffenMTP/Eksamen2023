@@ -18,13 +18,17 @@ const Goals = () => {
 
   const [counterOn, setCounterOn] = useState(false)
 
+  // GET HEROS
   const { error: errorH, loading: loadingH, data: dataH, makeRequest: makeRequestH } = useRequestData();
+  // GET GOALS
   const { error, loading, data, makeRequest } = useRequestData();
 
   useEffect(() => {
     makeRequest("goals")
     makeRequestH("heros")
   }, [])
+
+
 
   return (
     <>
@@ -49,7 +53,8 @@ const Goals = () => {
           </section>
 
           <div className='row GoalCounters text-white position-relative'>
-            {data.map((g) => (
+            
+            {data.sort((a,b)=>(a.order > b.order) ? 1: -1).map((g) => (
               <div key={g._id} className='col-12 col-md-3 mt-5 text-center'>
 
                 <div className='GoalBg mx-auto'>
