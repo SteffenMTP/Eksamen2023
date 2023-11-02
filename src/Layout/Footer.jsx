@@ -29,9 +29,9 @@ const Footer = () => {
 
             {/*Data*/}
             {data &&
-                <footer className="py-5">
+                <footer className="p-4">
                     <div className="row justify-content-between">
-                        <section className="col-6 col-md-3 mb-3 text-white">
+                        <section className="col-12 col-md-3 mb-3 text-white">
                             <Link to="/">
                                 <img src="./logo.png" alt="Bikelane logo" className='logofooter' />
                             </Link>
@@ -42,8 +42,9 @@ const Footer = () => {
                             </div>
                         </section>
 
-                        <div className="col-6 col-md-3 mb-3 text-white">
+                        <div className="col-12 col-md-3 mb-3 text-white">
                             <h5>Kommende events</h5>
+                            <hr />
                             {dataE && dataE.slice(0, 4).map(e =>
 
                                 <p key={e._id}>&#x3E; {e.title}</p>
@@ -52,8 +53,9 @@ const Footer = () => {
 
                         </div>
 
-                        <div className="col-6 col-md-1 mb-3 text-white">
+                        <div className="col-12 col-md-1 mb-3 text-white">
                             <h5>Indhold</h5>
+                            <hr />
                             <ul className="nav flex-column">
                                 <Link to="/aboutus" className="nav-foot-item mb-2 text-decoration-none">&#x3E; Om os</Link>
                                 <Link to="/event" className="nav-foot-item mb-2 text-decoration-none">&#x3E; Events</Link>
@@ -62,8 +64,9 @@ const Footer = () => {
                             </ul>
                         </div>
 
-                        <div className="col-6 col-md-4 mb-3 text-white">
+                        <div className="col-12 col-md-4 mb-3 text-white">
                             <h5>Galleri</h5>
+                            <hr />
                             <div className='row'>
 
                                 {dataE && dataE.slice(0, 6).map(p =>

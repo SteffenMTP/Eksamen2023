@@ -53,25 +53,26 @@ const Events = () => {
                 <button className='btn'>{c.category}</button>
               </div>
 
-            )}
+            ).reverse()}
           </div>
 
           <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2'>
             {dataE.map(e =>
 
-              <div className='card' key={e._id} e={e}>
-                <img src={"http://localhost:5888/images/event/" + e.image} className='rounded EventPic' alt="Events" />
-                <div className='card-body'>
-                  <p className='Highlight'>{new Date(e.eventdate).toLocaleString("da-dk", { day: "numeric", month: "long", year: "numeric" })} | Målgruppe: {e.category.category}</p>
-                  <h4 className='Bold'>{e.title}</h4>
-                  {/* <p>{Parse(e.content.slice(0,90))}...</p> */}
-                  <Link to={"/event/" + e._id}><button className='btn btn-secondary'>Se mere</button></Link>
+              <Link to={"/event/" + e._id} key={e._id} className='text-decoration-none'>
+                <div className='card h-100'  e={e}>
+                  <img src={"http://localhost:5888/images/event/" + e.image} className='rounded' alt="Events" />
+                  <div className='card-body'>
+                    <p className='Highlight'>{new Date(e.eventdate).toLocaleString("da-dk", { day: "numeric", month: "long", year: "numeric" })} | Målgruppe: {e.category.category}</p>
+                    <h4 className='Bold'>{e.title}</h4>
+                  </div>
                 </div>
-              </div>
+              </Link>
             )}
           </div>
 
-          <div className='Pagination'>
+          {/* OBS!! TODO TILVALGSOPGAVE PAGINATION */}
+          <div className='Pagination my-2'>
             <button className='btn btn-secondary me-1'>&#8592;</button>
             <button className='btn btn-secondary me-1'>1</button>
             <button className='btn btn-secondary me-1'>2</button>
@@ -81,6 +82,7 @@ const Events = () => {
 
           <hr />
 
+          {/* OBS!!! TODO TILVALGSOPGAVE LOGO SLIDER */}
           <div className='row row-md-2'>
             <section className='col-12 col-md-4'>
               <h3 className='Highlight'>{data[9].suptitle}</h3>
@@ -97,19 +99,19 @@ const Events = () => {
             </div>
           </div>
 
-          <div className='row contactSectionE text-white'>
+          <div className='row contactSectionE text-white p-5'>
             <div className='col-10 p-5'>
-              <h3>{data[7].suptitle}</h3>
-              <h2>{data[7].title}</h2>
+              <h4 className='Highlight'>{data[7].suptitle}</h4>
+              <h2 className='Bold'>{data[7].title}</h2>
             </div>
-            <div className='col-2 p-5'>
-              <Link to="/contact"><button className='btn btn-primary'>{data[7].buttontext}</button></Link>
+            <div className='col-2 mt-5'>
+              <Link to="/contact"><button className='btn btn-primary text-white'>{data[7].buttontext}</button></Link>
             </div>
           </div>
 
 
 
-        </div>
+        </div >
 
 
       }

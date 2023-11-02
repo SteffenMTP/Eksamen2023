@@ -35,12 +35,12 @@ const Home = () => {
       {/*Data*/}
       {data &&
         <div className='container row'>
-          <section className='col-6'>
+          <section className='col-12 col-md-6'>
             <h1 className='Bold'>{data[0].title}</h1>
             <p>{data[0].content}</p>
             <Link to="/contact"><button className='btn btn-primary'>{data[0].buttontext}</button></Link>
           </section>
-          <figure className='herocontainer col-6 position-relative'>
+          <figure className='herocontainer col-12 col-md-6 position-relative'>
           <div>
             <FontAwesomeIcon icon={faPlayCircle} className='PlayIcon position-absolute top-0 end-0 mt-3 mx-3' />
           </div>

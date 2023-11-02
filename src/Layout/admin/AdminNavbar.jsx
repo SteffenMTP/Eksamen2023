@@ -24,6 +24,9 @@ const AdminNavbar = () => {
                         <li className="nav-item">
                             <Link to="herosfront" className="nav-link">FORSIDE HERO - ADMIN</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link to="inquiries" className="nav-link">INQUIRIES - ADMIN</Link>
+                        </li>
                         <li><Logout /></li>
                     </ul>
                 </div>

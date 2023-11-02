@@ -38,9 +38,9 @@ const Goals = () => {
       {/*Data*/}
       {data && dataH &&
 
-        <div>
+        <div >
 
-          <section>
+          <section className='col-12 col-md-6'>
 
             <h3 className='Highlight'>{dataH[2].suptitle}</h3>
             <h2 className='Bold'>{dataH[2].title}</h2>
@@ -50,7 +50,7 @@ const Goals = () => {
 
           <div className='row GoalCounters text-white position-relative'>
             {data.map((g) => (
-              <div key={g._id} className='col-3 mt-5 text-center'>
+              <div key={g._id} className='col-12 col-md-3 mt-5 text-center'>
 
                 <div className='GoalBg mx-auto'>
                   <FontAwesomeIcon icon={g.icon} className='GoalIcon mt-2' />

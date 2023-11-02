@@ -80,14 +80,14 @@ const EventsDetail = ({e}) => {
                     <img src={"http://localhost:5888/images/event/" + data.image} className='w-100 rounded' alt={data.title} />
                     </figure>
                     <div className='row'>
-                    <div className='col-4 DetailInfo p-3'>
+                    <div className='col-12 col-md-4 DetailInfo p-2'>
                         <p>Tidspunkt: {new Date(data.eventdate).toLocaleString("da-dk", { day: "numeric", month: "long", year: "numeric" })}</p>
                         <p>Dage til event: {timerDays} </p>
                         <p>Lokation: {data.destination}</p>
                         <p>Distance: {data.distance} km</p>
                         <p>Sværhedsgrad: {data.difficulty}</p>
                     </div>
-                    <div className='col-8'>
+                    <div className='col-12 col-md-8'>
                         <span>{Parse(data.content)}</span>
                     </div>
                     </div>

@@ -24,7 +24,7 @@ const Community = () => {
             {data &&
                 <section className='d-flex'>
                     <div className='row'>
-                        <div className="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                        <div className="col-6 col-md-3 mb-4 mb-lg-0">
                             <img
                                 src={"http://localhost:5888/images/community/" + data.image1}
                                 className="w-100 shadow-1-strong rounded mb-4"
@@ -37,7 +37,7 @@ const Community = () => {
                                 alt="Four images that together create on big image of 3 females riding bicycles"
                             />
                         </div>
-                        <div className="col-lg-3 mb-4 mb-lg-0">
+                        <div className="col-6 col-md-3 mb-4 mb-lg-0">
                             <img
                                 src={"http://localhost:5888/images/community/" + data.image2}
                                 className="w-100 shadow-1-strong rounded mb-4"
@@ -50,7 +50,7 @@ const Community = () => {
                                 alt="Four images that together create on big image of 3 females riding bicycles"
                             />
                         </div>
-                        <div className='col-6'>
+                        <div className='col-12 col-md-6'>
                             <h3 className='Highlight'>{data.suptitle}</h3>
                             <h2 className='Bold'>{data.title}</h2>
                             <p>{data.content}</p>

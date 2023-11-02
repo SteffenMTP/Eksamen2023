@@ -27,7 +27,7 @@ const Interests = () => {
                 <section className='d-flex'>
                     <div className='row'>
 
-                        <div className='col-6'>
+                        <div className='col-12 col-md-6'>
                             <h3 className='Highlight'>{data.suptitle}</h3>
                             <h2 className='Bold'>{data.title}</h2>
                             <p>{data.content}</p>
@@ -47,7 +47,7 @@ const Interests = () => {
 
                         </div>
 
-                        <div className="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                        <div className="col-6 col-md-3 mb-4 mb-lg-0">
                             <img
                                 src={"http://localhost:5888/images/interest/" + data.image1}
                                 className="w-100 shadow-1-strong rounded mb-4"
@@ -60,7 +60,7 @@ const Interests = () => {
                                 alt="Wintry Mountain Landscape"
                             />
                         </div>
-                        <div className="col-lg-3 mb-4 mb-lg-0">
+                        <div className="col-6 col-md-3 mb-4 mb-lg-0">
                             <img
                                 src={"http://localhost:5888/images/interest/" + data.image2}
                                 className="w-100 shadow-1-strong rounded mb-4"

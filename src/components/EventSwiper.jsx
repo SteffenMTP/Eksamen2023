@@ -41,12 +41,12 @@ const EventSwiper = () => {
       {/*Data*/}
       {data && dataE &&
         <>
-          <section className='EventPattern position-relative row'>
-            <div className='col-10' >
+          <section className='EventPattern position-relative row text-white'>
+            <div className='col-12 col-md-10' >
             <h3 className='Highlight'>{data[5].suptitle}</h3>
-            <h2>{data[5].title}</h2>
+            <h2 className='Bold'>{data[5].title}</h2>
             </div>
-            <div className='col-2'>
+            <div className='col-6 col-md-2'>
             <Link to="/event"><button className='btn btn-primary'>{data[5].buttontext}</button></Link>
             </div>
             <div className='position-relative top-0'>

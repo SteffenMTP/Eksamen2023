@@ -50,19 +50,19 @@ const Contact = () => {
           <section className='text-center contactSection text-white'>
             <h3>{data[4].suptitle}</h3>
             <h2 className='Bold'>{data[4].title}</h2>
-            <figure>
-              <img src={"http://localhost:5888/images/hero/" + data[4].image} className='img-fluid' alt="An image of bikerows" />
+            <figure className='container'>
+              <img src={"http://localhost:5888/images/hero/" + data[4].image} className='img-fluid' alt="Bikerows" />
             </figure>
           </section>
 
           <div className='row'>
-            <div className='col-3 infoCon p-3'>
+            <div className='col-12 col-md-3 infoCon p-3'>
             <p><span className='infoLogoBg rounded-circle p-1'><PiBuildings className='IconHighlight'/></span> Klubhuset I Grenaa</p>
               <address><span className='infoLogoBg rounded-circle p-1'><LiaMapMarkerAltSolid className='IconHighlight'/></span> {dataC.address}, {dataC.zipcity}</address>
               <p><span className='infoLogoBg rounded-circle p-1'><PiClockAfternoon className='IconHighlight'/></span> {dataC.openinghours}</p>
               <p><span className='infoLogoBg rounded-circle p-1'><PiEnvelopeSimple className='IconHighlight'/></span> {dataC.email}</p>
             </div>
-            <div className='col-9 mb-5'>
+            <div className='col-12 col-md-9 mb-5'>
               {dataI && <h2 className='text-center mt-5'>Tak for din besked, vi vil vende tilbage indenfor 3-4 hverdage</h2>}
               {!dataI &&
               <form onSubmit={handleSubmit} className='form-control d-flex flex-column'>
