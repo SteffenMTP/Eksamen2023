@@ -16,6 +16,14 @@ $primary: $blush;
 
 // HEADER & NAV
 
+.SOME{
+
+    &:hover{
+        color: #D45D79;
+    }
+
+}
+
 .navbar {
     width: 100%;
     height: auto;

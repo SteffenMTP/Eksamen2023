@@ -9,8 +9,6 @@ import useRequestData from '../hooks/useRequestData';
 
 const Events = () => {
 
-  const [category, setCategory] = useState("")
-
   // GET HERO
   const { error, loading, data, makeRequest } = useRequestData();
   // GET EVENTS
@@ -20,7 +18,8 @@ const Events = () => {
   // GET SPONSERS
   const { error: errorS, loading: loadingS, data: dataS, makeRequest: makeRequestS } = useRequestData();
 
-
+  const [category, setCategory] = useState("")
+  const currentDate = new Date();
 
   useEffect(() => {
     makeRequest("heros")
@@ -49,17 +48,22 @@ const Events = () => {
           </section>
 
           <div className='d-flex justify-content-center mb-4'>
-            {dataC.map(c =>
+            {dataC.slice().reverse().map(c => (
 
               <div key={c._id}>
-                <button className='btn'>{c.category}</button>
+                <button className='btn' onClick={()=>setCategory(c.category)}>{c.category}</button>
               </div>
 
-            ).reverse()}
+            ))}
+            <div>
+                <button className='btn' onClick={()=>setCategory("")}>Fjern filter</button>
+              </div>
           </div>
 
           <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2'>
-            {dataE.map(e =>
+            {/* TODO SORTÉR EFTER DATO */}
+            {dataE.filter((e)=>new Date(e.eventdate) > currentDate).filter((e)=>category === "" || e.category.category === category)
+            .sort((a,b) => new Date(a.eventdate - new Date(b.eventdate))).map(e =>
 
               <Link to={"/event/" + e._id} key={e._id} className='text-decoration-none'>
                 <div className='card h-100'  e={e}>

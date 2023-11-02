@@ -34,10 +34,10 @@ const Header = () => {
                             <FaCalendarAlt className='mt-1 m-1'/><p>{data.openinghours}</p>
                             <FaEnvelope className='mt-1 m-1'/><p>{data.email}</p>
                         </div>
-                        <div className='SOME justify-content-end'>
+                        <div className='justify-content-end'>
                             {data.some.map(d =>
-                                <span key={d._id}>
-                                    <FontAwesomeIcon icon={"fab fa" + d.icon}/>
+                                <span key={d._id} className='SOME mx-2'>
+                                    <FontAwesomeIcon icon={"fab fa" + d.icon} />
                                 </span>
                             )}
                         </div>
