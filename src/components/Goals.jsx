@@ -64,7 +64,7 @@ const Goals = () => {
 
               </div>
             ))}
-            <figure className='position-relative'>
+            <figure className='col-12 col-md-12 position-relative'>
               <div>
                 <FontAwesomeIcon icon={faPlayCircle} className='PlayIcon position-absolute top-0 end-0 mt-3 mx-3' />
               </div>
