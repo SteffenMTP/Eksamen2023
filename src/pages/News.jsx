@@ -1,35 +1,48 @@
-import { React, useEffect } from 'react'
-import Error from '../components/Error';
-import Loader from '../components/Loader';
+import { React } from 'react';
 
-import { Link } from 'react-router-dom';
-
-import useRequestData from '../hooks/useRequestData';
+import NewsCard from '../components/NewsCard';
 
 const News = () => {
 
-  // GET HERO
-  const { error, loading, data, makeRequest } = useRequestData();
-
-  useEffect(() => {
-    makeRequest("heros")
-  }, [])
-
   return (
     <>
+      <div className='row g-3'>
 
-      {/*Error*/}
-      {error && <Error />}
+        <div>
+          <form className="form-inline d-flex justify-content-center md-form form-sm">
+            <input className="form-control form-control-sm mr-3 w-75" type="text" placeholder="Søg"
+              aria-label="Search"/>
+          </form>
+        </div>
 
-      {/*Loading*/}
-      {loading && <Loader />}
+        <div className='col-12 col-md-6'>
+          <NewsCard />
+        </div>
+        <div className='col-12 col-md-3'>
+          <NewsCard />
+        </div>
+        <div className='col-12 col-md-3'>
+          <NewsCard />
+        </div>
+        <div className='col-12 col-md-4'>
+          <NewsCard />
+        </div>
+        <div className='col-12 col-md-4'>
+          <NewsCard />
+        </div>
+        <div className='col-12 col-md-4'>
+          <NewsCard />
+        </div>
+      </div>
 
-      {/*Data*/}
-      {data &&
+      <div className='Pagination my-2'>
+        <button className='btn btn-secondary me-1'>&#8592;</button>
+        <button className='btn btn-secondary me-1'>1</button>
+        <button className='btn btn-secondary me-1'>2</button>
+        <button className='btn btn-secondary me-1'>3</button>
+        <button className='btn btn-secondary me-1'>&#8594;</button>
+      </div>
 
-        <h2>NEWS</h2>
-
-      }
 
     </>
   )

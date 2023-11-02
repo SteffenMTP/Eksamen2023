@@ -13,7 +13,7 @@ const Layout = () => {
         <Header/>
         <Navbar/>
 
-        <main>
+        <main className='container'>
             <Outlet/>
             <ScrollButton/>
         </main>

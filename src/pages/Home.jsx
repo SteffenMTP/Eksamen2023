@@ -34,7 +34,7 @@ const Home = () => {
 
       {/*Data*/}
       {data &&
-        <div className='container row'>
+        <div className='container-fluid row'>
           <section className='col-12 col-md-6'>
             <h1 className='Bold'>{data[0].title}</h1>
             <p>{data[0].content}</p>

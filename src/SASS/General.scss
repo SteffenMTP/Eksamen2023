@@ -14,7 +14,27 @@ html {
 
 $primary: $blush;
 
+// HEADER & NAV
 
+.navbar {
+    height: 80px;
+    background-color: rgb(244, 241, 241);
+
+    ul li:hover a{
+        color: $primary;
+        background-color: $silver;
+        border-bottom: 5px solid $primary;    
+    } 
+
+}
+
+.navbar ul li .active{
+    border-bottom: 5px solid #D45D79;
+
+    &:hover{
+        color: $primary;
+    }
+}
 
 .herocontainer {
     width: 600px;
@@ -70,6 +90,8 @@ h2 {
     font-size: 30px;
     border-radius: 5px;
 }
+
+// FOOTER
 
 footer {
     background-color: $delft_blue;
