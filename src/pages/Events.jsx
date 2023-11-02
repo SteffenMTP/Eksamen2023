@@ -66,7 +66,7 @@ const Events = () => {
             .sort((a,b) => new Date(a.eventdate - new Date(b.eventdate))).map(e =>
 
               <Link to={"/event/" + e._id} key={e._id} className='text-decoration-none'>
-                <div className='card h-100'  e={e}>
+                <div className='card h-100'>
                   <img src={"http://localhost:5888/images/event/" + e.image} className='rounded' alt="Events" />
                   <div className='card-body'>
                     <p className='Highlight'>{new Date(e.eventdate).toLocaleString("da-dk", { day: "numeric", month: "long", year: "numeric" })} | Målgruppe: {e.category.category}</p>

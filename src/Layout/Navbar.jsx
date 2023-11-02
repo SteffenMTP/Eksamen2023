@@ -8,7 +8,7 @@ const Navbar = () => {
 
         //NAVBAR WORK IN PROGRESS
 
-        <nav className="navbar navbar-expand-lg bg-light">
+        <nav className="navbar navbar-expand-lg bg-light sticky-top">
             <div className="container">
                 <Link className="navbar-brand" to="/">
                     <img src="./logo-black.png" alt="logo" width="100" />

@@ -43,11 +43,11 @@ const EventSwiper = () => {
         <>
           <section className='EventPattern position-relative row text-white'>
             <div className='col-12 col-md-10' >
-            <h3 className='Highlight'>{data[5].suptitle}</h3>
-            <h2 className='Bold'>{data[5].title}</h2>
+              <h3 className='Highlight'>{data[5].suptitle}</h3>
+              <h2 className='Bold'>{data[5].title}</h2>
             </div>
             <div className='col-6 col-md-2'>
-            <Link to="/event"><button className='btn btn-primary'>{data[5].buttontext}</button></Link>
+              <Link to="/event"><button className='btn btn-primary'>{data[5].buttontext}</button></Link>
             </div>
             <div className='position-relative top-0'>
 
@@ -64,19 +64,23 @@ const EventSwiper = () => {
                   modifier: 1,
                   slideShadows: false,
                 }}
-                modules={[EffectCoverflow, Pagination]}
+                modules={[EffectCoverflow]}
                 className="mySwiper"
               >
 
-                {dataE.map(e =>
+                {dataE
+                  .filter((e) => new Date(e.eventdate) >= new Date()) // FILTER FOR INCOMMING EVENTS
+                  .sort((a, b) => new Date(a.eventdate) - new Date(b.eventdate)) // SORT BY THE DATE
+                  .slice(0, 4)
+                  .map((e) => (
 
-                  <SwiperSlide key={e._id}>
-                    <img src={"http://localhost:5888/images/event/" + e.image} alt={e.category} className='postion-relative' />
-                    <small className='Highlight'>{e.category.category}: {e.title}</small>
-                    <p>Lokation: {e.destination}</p>
-                  </SwiperSlide>
 
-                )}
+                    <SwiperSlide key={e._id}>
+                      <img src={"http://localhost:5888/images/event/" + e.image} alt={e.category} className='postion-relative' />
+                      <small className='Highlight'>{e.category.category}: {e.title}</small>
+                    </SwiperSlide>
+                  )
+                  )}
 
               </Swiper>
             </div>

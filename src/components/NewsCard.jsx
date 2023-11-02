@@ -8,7 +8,7 @@ const NewsCard = () => {
 
                 <div className='card'>
                     <h2 className='card-title text-center'>NYHEDS TITLE</h2>
-                    <img src="https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Nyhed" />
+                    <img src="https://images.pexels.com/photos/100582/pexels-photo-100582.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="https://www.pexels.com/da-dk/foto/vej-skov-traeer-sti-100582/" />
                     <div className='card-body'>
 
                         <section className='card-text p-2'>
