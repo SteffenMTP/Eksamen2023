@@ -18,7 +18,7 @@ const NewsCard = () => {
                         </section>
                         <hr />
                         <div className='my-2 text-center'>
-                            <Link to="#" className='text-decoration-none'>Læs mere om nyheden her</Link>
+                            <Link to="newsdetail" className='text-decoration-none'>Læs mere om nyheden her</Link>
                         </div>
                     </div>
 

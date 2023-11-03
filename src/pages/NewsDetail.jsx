@@ -1,8 +1,13 @@
 import React from 'react'
+import NewsCard from '../components/NewsCard'
 
 const NewsDetail = () => {
   return (
-    <div>NewsDetail</div>
+    <>
+
+      <NewsCard/>
+    
+    </>
   )
 }
 
