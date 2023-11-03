@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink, Link } from "react-router-dom";
 import '../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
 
-
 const Navbar = () => {
     return (
 
@@ -21,7 +20,9 @@ const Navbar = () => {
 
                 <div className="offcanvas offcanvas-start" tabIndex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                     <div className="offcanvas-header">
-                        <h5 className="offcanvas-title" id="offcanvasNavbarLabel">Bikelane</h5>
+                        <Link className="offcanvas-title" to="/" id="offcanvasNavbarLabel">
+                            <img src="./logo.png" alt="logo" width="100" />
+                        </Link>
                         <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
                     <div className='offcanvas-body'>
@@ -54,7 +55,7 @@ const Navbar = () => {
                                 <NavLink className="nav-link" aria-current="page" to="/news">Nyheder</NavLink>
                             </li>
                             <Link to={"/contact"}>
-                            <button className='btn btn-primary text-white'>Gratis Prøveperiode</button>
+                                <button className='btn btn-primary text-white'>Gratis Prøveperiode</button>
                             </Link>
 
                         </ul>

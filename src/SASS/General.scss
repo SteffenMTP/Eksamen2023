@@ -77,6 +77,23 @@ $primary: $blush;
 
 }
 
+.navbar .offcanvas {
+    background-color: $dark_purple;
+}
+
+// .navbar .offcanvas .nav-link {
+//     color: white;
+
+//     &:hover{
+//         background-color: $dark_purple;
+//     }
+
+// }
+
+// .navbar .offcanvas .nav-link.active{
+//     color: white;
+// }
+
 .dropdown .dropdown-menu .dropdown-item:hover{
     color: $primary;
 }
@@ -197,12 +214,37 @@ footer {
 
 .Goalpic {
     position: absolute;
-    bottom: 5px;
-    right: -350px;
+    bottom: 40px;
+    right: -250px;
     border-radius: 10px;
-    width: 375px;
+    width: 300px;
     height: auto;
 }
+
+.PlayIconGoal{
+    width: 50px;
+        height: 50px;
+        z-index: 2;
+        cursor: pointer;
+        margin-bottom: 55px;
+        margin-right: -220px;
+}
+
+// INTERESTS
+
+.keypointIcon{
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    background-color: #f9eaed;
+
+
+    i{  
+        font-size: 35px;
+        color: #D45D79;
+    }
+}
+
 
 // TESTIMONIAL SECTION //
 

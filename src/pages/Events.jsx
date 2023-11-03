@@ -89,7 +89,7 @@ const Events = () => {
               )}
           </div>
 
-          {/* OBS!! TODO TILVALGSOPGAVE PAGINATION */}
+          {/* OBS!! TILVALGSOPGAVE PAGINATION */}
           <div className='Pagination my-2 col-12 col-md-12'>
             <button className='btn btn-secondary me-1' disabled={currentPage <= 0} onClick={() => setCurrentPage(currentPage - 1)}> &lt; Forrige</button>
 
@@ -104,7 +104,7 @@ const Events = () => {
 
           <hr />
 
-          {/* OBS!!! TODO TILVALGSOPGAVE LOGO SLIDER */}
+          {/* OBS!!! TILVALGSOPGAVE LOGO SLIDER */}
           <div className='row row-md-2'>
             <section className='col-12 col-md-4'>
               <h3 className='Highlight'>{data[9].suptitle}</h3>

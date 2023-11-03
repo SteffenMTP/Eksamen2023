@@ -72,11 +72,11 @@ const Goals = () => {
 
               </div>
             ))}
-            <figure className='col-12 col-md-12 position-relative'>
-              <div>
-                <FontAwesomeIcon icon={faPlayCircle} className='PlayIcon position-absolute top-0 end-0 mt-3 mx-3' />
-              </div>
+            <figure className='col-12 col-md-12'>
               <img src={"http://localhost:5888/images/hero/" + dataH[2].image} className='Goalpic' alt="Closeup of a man riding a bike with a play button in the bottom right corner for a video" />
+              <div>
+                <FontAwesomeIcon icon={faPlayCircle} className='PlayIconGoal position-absolute bottom-0 end-0' />
+              </div>
             </figure>
           </div>
         </div>

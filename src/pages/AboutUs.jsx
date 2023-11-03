@@ -66,6 +66,7 @@ const AboutUs = () => {
         
         </article>
         <section className='mt-4'>
+          {/* OBS!!! TODO RESEARCH HVORDAN MAN KAN ÆNDRE ET COMPONENT VIA AT KIGGE PÅ PATHNAME? (UseLocation?) */}
         <Community/>
         </section>
         

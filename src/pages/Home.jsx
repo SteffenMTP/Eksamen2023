@@ -9,7 +9,7 @@ import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 // IMPORT HOOK
 import useRequestData from '../hooks/useRequestData';
 
-// IMPORT AF COMPONENTS
+// IMPORT COMPONENTS
 import Community from '../components/Community';
 import Goals from '../components/Goals';
 import Interests from '../components/Interests';
@@ -39,6 +39,7 @@ const Home = () => {
       {data &&
         <div className='container-fluid row'>
           <section className='col-12 col-md-6'>
+            {/* OBS!! TODO DENNE TEKST SKAL SLICES OG SÅ EFFEKT PÅ */}
             <h1 className='Bold'>{data[0].title}</h1>
             <p>{data[0].content}</p>
             <Link to="/contact"><button className='btn btn-primary'>{data[0].buttontext}</button></Link>

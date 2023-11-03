@@ -39,11 +39,15 @@ const Interests = () => {
 
                                 {data.keypoints.map(k =>
                                     <div className='row' key={k._id}>
-                                        <div className='col'>
-                                            <i className={k.icon}></i>
+                                
+                                            <div className='col-2 my-auto keypointIcon'>
+                                                <i className={k.icon}></i>
+                                            </div>
+                                            <section className='col-10'>
                                             <p>{k.keypoint}</p>
                                             <p>{k.description}</p>
-                                        </div>
+                                            </section>
+                                
                                     </div>
 
                                 )}
