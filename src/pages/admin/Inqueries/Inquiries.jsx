@@ -12,25 +12,22 @@ const Inquiries = () => {
     }, []);
 
     useEffect(() => {
-        makeRequestP("inquires/admin", null, null, "PATCH");
-    }, [dataP]);
-
-    useEffect(() => {
         if (data) {
             setInquiries(data);
         }
     }, [data]);
 
+    // OBS!!! TO DO GET THIS TO WORK
     const toggleRead = (inq) => {
-        const updatedInquiries = inquiries.map((item) => {
-            if (item._id === inq._id) {
-                item.read = !item.read;
-            }
-            return item;
-        });
-        setInquiries(updatedInquiries);
-        // Make a PATCH request to update the 'read' property in your API
-        makeRequestP(`inquires/admin/${inq._id}`, null, null, "PATCH", { read: inq.read });
+    //     const updatedInquiries = inquiries.map((item) => {
+    //         if (item._id === inq._id) {
+    //             item.read = !item.read;
+    //         }
+    //         return item;
+    //     });
+    //     setInquiries(updatedInquiries);
+        
+    //     makeRequestP(`inquires/admin/${inq._id}`, null, null, "PATCH", { read: inq.read });
     };
 
     return (
