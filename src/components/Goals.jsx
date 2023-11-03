@@ -45,7 +45,7 @@ const Goals = () => {
       {/*Data*/}
       {data && dataH &&
 
-        <div >
+        <div className='GoalMain'>
 
           <section className='col-12 col-md-6'>
 

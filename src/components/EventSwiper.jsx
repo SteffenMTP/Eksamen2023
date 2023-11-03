@@ -12,7 +12,7 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 
 // import required modules
-import { EffectCoverflow} from 'swiper/modules';
+import { EffectCoverflow } from 'swiper/modules';
 
 // Import SCSS
 import '../SASS/Swiper.scss'
@@ -24,7 +24,7 @@ const EventSwiper = () => {
 
   // GET HEROES
   const { error, loading, data, makeRequest } = useRequestData();
-  
+
   // GET EVENTS
   const { error: errorE, loading: loadingE, data: dataE, makeRequest: makeRequestE } = useRequestData();
 
@@ -50,7 +50,7 @@ const EventSwiper = () => {
               <h2 className='Bold'>{data[5].title}</h2>
             </div>
             <div className='col-6 col-md-2'>
-              <Link to="/event"><button className='btn btn-primary'>{data[5].buttontext}</button></Link>
+              <Link to="/event"><button className='btn btn-primary mt-5 text-white'>{data[5].buttontext}</button></Link>
             </div>
             <div className='position-relative top-0'>
 
@@ -79,8 +79,10 @@ const EventSwiper = () => {
 
 
                     <SwiperSlide key={e._id}>
-                      <img src={"http://localhost:5888/images/event/" + e.image} alt={e.category} className='postion-relative' />
-                      <small className='Highlight'>{e.category.category}: {e.title}</small>
+                      <Link to={"/event/" + e._id}>
+                        <img src={"http://localhost:5888/images/event/" + e.image} alt={e.category} className='postion-relative' />
+                        <small className='Highlight'>{e.category.category}: {e.title}</small>
+                      </Link>
                     </SwiperSlide>
                   )
                   )}

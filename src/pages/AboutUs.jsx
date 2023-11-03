@@ -38,9 +38,9 @@ const AboutUs = () => {
             <h2 className='Bold'>{data[1].title}</h2>
           </div>
           
-          <div className='col-6'>
+          <div className='col-6 mb-3'>
             <p>{data[1].content}</p>
-            <button className='btn btn-primary'>{data[1].buttontext}</button>
+            <button className='btn btn-primary text-white'>{data[1].buttontext}</button>
           </div>
           
           <figure>
