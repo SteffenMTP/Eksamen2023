@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
 
+// IMPORT ICONS
 import { AiFillEdit} from 'react-icons/ai'
 
 // IMPORT Hook
@@ -18,7 +19,7 @@ library.add(fab, faCrown, faBiking, faMap, faHandshake)
 
 const GoalsAdmin = () => {
 
-    //request-hook
+    //GET GOALS
     const { loading, error, data, makeRequest } = useRequestData();
 
     useEffect(() => {
@@ -36,6 +37,7 @@ const GoalsAdmin = () => {
             {/* Loading */}
             {loading && <Loader />}
 
+            {/* Data */}
             <table className='table'>
                 <thead>
                     <tr>

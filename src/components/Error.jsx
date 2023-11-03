@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Error = ({errormessage, children}) => {
   return (
@@ -8,7 +8,7 @@ const Error = ({errormessage, children}) => {
             errormessage && <p>{errormessage}</p>
         }
 
-        { children } {/*Skal hedde children, og kan ikke laves om (eller en god ide ikke at gøre det) */}
+        { children }
 
     </div>
   )

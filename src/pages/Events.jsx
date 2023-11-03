@@ -5,6 +5,7 @@ import Loader from '../components/Loader';
 import { Link } from 'react-router-dom';
 // import Parse from 'html-react-parser';
 
+// IMPORT HOOK
 import useRequestData from '../hooks/useRequestData';
 
 const Events = () => {

@@ -2,15 +2,22 @@ import { React, useEffect } from 'react';
 import { Link } from "react-router-dom";
 import Error from '../components/Error';
 import Loader from '../components/Loader';
+
+// IMPORT ICONS
 import { FaHouseChimney, FaEnvelope } from 'react-icons/fa6';
 
+// IMPORT STYLE
 import '../SASS/General.scss';
 
+// IMPORT HOOK
 import useRequestData from '../hooks/useRequestData';
 
 const Footer = () => {
 
+    // GET CONTACTINFORMATION
     const { error, loading, data, makeRequest } = useRequestData();
+    
+    // GET EVENTS
     const { error: errorE, loading: loadingE, data: dataE, makeRequest: makeRequestE } = useRequestData();
 
     useEffect(() => {
@@ -22,10 +29,10 @@ const Footer = () => {
         <>
 
             {/*Error*/}
-            {error && <Error />}
+            {(error || errorE) && <Error />}
 
             {/*Loading*/}
-            {loading && <Loader />}
+            {(loading || loadingE) && <Loader />}
 
             {/*Data*/}
             {data &&

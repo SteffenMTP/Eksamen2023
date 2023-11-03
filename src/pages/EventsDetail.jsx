@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 
 import { useParams } from 'react-router-dom';
 import Parse from 'html-react-parser';
+
+// IMPORT HOOK
 import useRequestData from '../hooks/useRequestData';
 
 const EventsDetail = () => {
@@ -12,7 +14,7 @@ const EventsDetail = () => {
     // STATE TIL COUNTDOWN
     const [countdown, setCountdown] = useState(0);
 
-    // GET data
+    // GET EVENT
     const { loading, error, data, makeRequest } = useRequestData();
     // GET PARAM ID FROM EVENT
     const { eventID } = useParams();

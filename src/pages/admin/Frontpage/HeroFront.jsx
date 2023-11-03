@@ -4,13 +4,13 @@ import { useNavigate } from 'react-router-dom';
 import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
 
-// IMPORT Hook
-import useRequestData from '../../../hooks/useRequestData';
-
 // QUILL
 // https://quilljs.com/docs/modules/toolbar/
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
+
+// IMPORT Hook
+import useRequestData from '../../../hooks/useRequestData';
 
 const HeroFront = () => {
 

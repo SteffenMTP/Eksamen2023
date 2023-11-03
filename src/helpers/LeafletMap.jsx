@@ -1,28 +1,24 @@
 import React from 'react'
 
-//Leaflet
+//LEAFLET
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 
-//For at få merker til at virke
+//MARKER
 import iconMarker from 'leaflet/dist/images/marker-icon.png';
 import iconRetina from 'leaflet/dist/images/marker-icon-2x.png';
 import iconShadow from 'leaflet/dist/images/marker-shadow.png';
 
-//
+//ICON
 const icon = L.icon({
     iconRetinaURL: iconRetina, 
     iconUrl: iconMarker,
     shadowURL: iconShadow
 })
 
-
-
 const LeafletMap = () => {
     
-    // {coord = [56, 10], popupinfo = "Find os her"}
-
     return (
         <div>
             <MapContainer

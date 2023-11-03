@@ -4,10 +4,12 @@ import Loader from '../components/Loader';
 
 import "../assets/Fonts/thin/style.css";
 
+// IMPORT HOOK
 import useRequestData from '../hooks/useRequestData';
 
 const Interests = () => {
 
+    // GET INTEREST
     const { error, loading, data, makeRequest } = useRequestData();
 
     useEffect(() => {

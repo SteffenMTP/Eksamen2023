@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
 
-import useRequestData from '../../../hooks/useRequestData';
 import Loader from '../../../components/Loader';
 import Error from '../../../components/Error';
 
@@ -9,15 +8,17 @@ import Error from '../../../components/Error';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
+// IMPORT HOOK
+import useRequestData from '../../../hooks/useRequestData';
 
 const EventCreate = () => {
   
-  // POST to EVENTS
+  // POST TO EVENTS
   const { error, loading, data, makeRequest } = useRequestData();
   // GET CATEGORIES
   const { error: errorC, loading: loadingC, data: dataC, makeRequest: makeRequestC } = useRequestData();
   
-  //state til at rumme kategori (fra inputfelt)
+  //STATE TO CONTAIN CATEGORY (FROM INPUT)
   const [category, setCategory] = useState()
   
   useEffect(() => {
@@ -52,15 +53,15 @@ const EventCreate = () => {
   return (
     <div>
 
-
       <h1>Opret nyt event</h1>
 
-      {/* Loading */}
-      {loading && <Loader />}
-
       {/* Error */}
-      {error && <Error />}
+      {(error || errorC) && <Error />}
+      
+      {/* Loading */}
+      {(loading || loadingC) && <Loader />}
 
+      {/* Data */}
       {data && <h3>Nyt event er oprettet</h3>}
 
       <form onSubmit={handleSubmit} className='form-group d-flex flex-column'>

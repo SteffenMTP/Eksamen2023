@@ -3,17 +3,18 @@ import { Link } from 'react-router-dom';
 import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
 
+// IMPORT ICONS
 import { AiFillEdit, AiFillDelete, AiFillPlusCircle } from 'react-icons/ai'
 
 // IMPORT Hook
 import useRequestData from '../../../hooks/useRequestData';
 
-// 1. GET ALL EVENTS
-
 const EventAdmin = () => {
 
-  //request-hook
+  //GET EVENTS
   const { loading, error, data, makeRequest } = useRequestData();
+
+  // DELETE EVENTS
   const { loading:loadingDel, error: errorDel, data: dataDel, makeRequest: makeRequestDelete } = useRequestData();
 
   useEffect(() => {
@@ -22,7 +23,7 @@ const EventAdmin = () => {
 
   }, [dataDel])
 
-  //Slet nyhed  OBS KIG evt. på dialog
+  //DELETE EVENT OBS!!! LOOK AT POTENTIAL DIALOG BOX
   const handleDelete = (eventID, eventTitle) => {
 
     if (window.confirm("Er du sikker på du vil slette? " + eventTitle)) {
@@ -41,7 +42,8 @@ const EventAdmin = () => {
         {/* Loading */}
         {(loading || loadingDel) && <Loader />}
 
-        <table className='table'>
+        {/* Data */}
+        <table className='table'> 
           <thead>
 
             <tr>

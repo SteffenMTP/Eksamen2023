@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState} from 'react';
 import { useParams, useNavigate  } from 'react-router-dom';
 
-import useRequestData from '../../../hooks/useRequestData';
 import Loader from '../../../components/Loader';
 import Error from '../../../components/Error';
 
@@ -10,13 +9,16 @@ import Error from '../../../components/Error';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 
+// IMPORT HOOK
+import useRequestData from '../../../hooks/useRequestData';
+
 const EventEdit = () => {
 
   // GET EVENTS
   const { error, loading, data, makeRequest } = useRequestData();
   // GET CATEGORIES
   const { error: errorC, loading: loadingC, data: dataC, makeRequest: makeRequestC } = useRequestData();
-
+  // PUT EVENT
   const { error: errorEdit, loading: loadingEdit, data: dataEdit, makeRequest: makeRequestEdit } = useRequestData();
 
   //state til at rumme kategori (fra inputfelt)
@@ -62,7 +64,7 @@ const EventEdit = () => {
       {(error || errorEdit || errorC) && <Error />}
       
       {/* Loading */}
-      {(loading || loadingEdit || loadingEdit) && <Loader />}
+      {(loading || loadingEdit || loadingC) && <Loader />}
 
       {/* Data */}
       {data && dataC &&

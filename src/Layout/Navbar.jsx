@@ -6,7 +6,7 @@ import '../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
 const Navbar = () => {
     return (
 
-        //NAVBAR WORK IN PROGRESS
+        //NAVBAR
 
         <nav className="navbar navbar-expand-lg bg-light sticky-top">
             <div className="container">

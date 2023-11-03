@@ -1,5 +1,6 @@
 import { React } from 'react';
 
+//IMPORT COMPONENT
 import NewsCard from '../components/NewsCard';
 
 const News = () => {

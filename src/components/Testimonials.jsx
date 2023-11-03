@@ -7,7 +7,10 @@ import useRequestData from '../hooks/useRequestData';
 
 const Testimonials = () => {
 
+    // GET TESTIMONIALS
     const { error, loading, data, makeRequest } = useRequestData();
+    
+    // GET HEROS
     const { error: errorH, loading: loadingH, data: dataH, makeRequest: makeRequestH } = useRequestData();
 
     useEffect(() => {

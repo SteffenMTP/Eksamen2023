@@ -1,9 +1,12 @@
 import { React, useEffect, useState } from 'react'
 import Error from '../components/Error';
 import Loader from '../components/Loader';
+
+// GOALCOUNT ASSETS
 import CountUp from 'react-countup';
 import ScrollTrigger from 'react-scroll-trigger';
 
+// IMPORT HOOK
 import useRequestData from '../hooks/useRequestData';
 
 //FONT AWESOME

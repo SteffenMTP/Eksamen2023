@@ -2,14 +2,18 @@ import { React, useEffect } from 'react'
 import Error from '../components/Error';
 import Loader from '../components/Loader';
 
+// IMPORT ICONS
 import { FaQuoteRight } from 'react-icons/fa';
 
-import useRequestData from '../hooks/useRequestData';
 import Community from '../components/Community';
 import Goals from '../components/Goals';
 
+// IMPORT HOOK
+import useRequestData from '../hooks/useRequestData';
+
 const AboutUs = () => {
 
+  // GET HEROS
   const { error, loading, data, makeRequest } = useRequestData();
 
   useEffect(() => {

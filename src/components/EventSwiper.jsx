@@ -12,7 +12,7 @@ import 'swiper/css/effect-coverflow';
 import 'swiper/css/pagination';
 
 // import required modules
-import { EffectCoverflow, Pagination } from 'swiper/modules';
+import { EffectCoverflow} from 'swiper/modules';
 
 // Import SCSS
 import '../SASS/Swiper.scss'
@@ -22,7 +22,10 @@ import useRequestData from '../hooks/useRequestData';
 
 const EventSwiper = () => {
 
+  // GET HEROES
   const { error, loading, data, makeRequest } = useRequestData();
+  
+  // GET EVENTS
   const { error: errorE, loading: loadingE, data: dataE, makeRequest: makeRequestE } = useRequestData();
 
   useEffect(() => {

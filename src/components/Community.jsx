@@ -2,10 +2,12 @@ import { React, useEffect } from 'react'
 import Error from '../components/Error';
 import Loader from '../components/Loader';
 
+// IMPORT HOOK
 import useRequestData from '../hooks/useRequestData';
 
 const Community = () => {
 
+    // IMPORT COMMUNITY
     const { error, loading, data, makeRequest } = useRequestData();
 
     useEffect(() => {

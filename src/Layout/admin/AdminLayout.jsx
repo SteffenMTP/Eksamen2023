@@ -9,9 +9,8 @@ import { LoginContext } from "../../context/LoginContext"
 
 const AdminLayout = () => {
 
-
-  // Brugeren skal være logget ind for at komme videre herfra il de andre adminsider
-  // Hvis brugeren IKKE er logget ind => sendes til login-siden
+  // USER NEEDS TO BE LOGGED IN TO CONTINUE TOWARDS OTHER ADMIN PAGES
+  // IF THE USER IS NOT LOGGED IN => SEND TO LOGIN PAGE
 
   const {adminUser} = useContext(LoginContext)
 

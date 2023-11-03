@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 
+// IMPORT HOOK
 import useRequestData from '../../../hooks/useRequestData';
 
 const Inquiries = () => {

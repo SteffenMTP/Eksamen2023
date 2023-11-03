@@ -3,18 +3,15 @@ import { useContext } from 'react'
 import { LoginContext } from '../context/LoginContext'
 
 
-// Button til logud
+// BUTTON TO LOGOUT
 const Logout = () => {
 
-    // det vi skal bruge fra context-filen - signOut
+    // WHAT WE NEED FROM CONTEXT-FILE - SIGNOUT
     const { signOut } = useContext( LoginContext )
-
-
 
     const handleLogout = () => {
         signOut()
     }
-
 
     return (
         <div>

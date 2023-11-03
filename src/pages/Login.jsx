@@ -9,20 +9,19 @@ const Login = () => {
 
   const { signIn, adminUser } = useContext(LoginContext)
 
-  // hvis der er en bruger/logget ind så send direkte videre til admin
+  // IF ADMIN USER IS LOGGED IN - NAVIGATE TO ADMIN HOME PAGE
   if (adminUser) {
     return <Navigate to="/admin" replace />
   }
 
-  // Håndter loginformularens submit
+  // HANDLE LOGIN
   const handleLogin = (e) => {
 
     e.preventDefault()
-    // simulerer login
+    // SIMULATE LOGIN
     signIn(e.target.email.value)
 
   }
-
 
   return (
     <>

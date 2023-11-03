@@ -1,14 +1,17 @@
 import { React, useEffect } from 'react';
 import Error from '../components/Error';
 import Loader from '../components/Loader';
+
+// IMPORT ICONS
 import {FaBuilding, FaCalendarAlt, FaEnvelope} from 'react-icons/fa';
-
-import useRequestData from '../hooks/useRequestData';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+//IMPORT HOOK
+import useRequestData from '../hooks/useRequestData';
 
 const Header = () => {
 
+    // GET CONTACTINFORMATION
     const { error, loading, data, makeRequest } = useRequestData();
 
     useEffect(() => {

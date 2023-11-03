@@ -4,8 +4,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
 
-// IMPORT Hook
-import useRequestData from '../../../hooks/useRequestData';
 
 //FONT AWESOME
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -15,14 +13,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 library.add(fab, faCrown, faBiking, faMap, faHandshake)
 
-
+// IMPORT Hook
+import useRequestData from '../../../hooks/useRequestData';
 
 const GoalsEdit = () => {
 
-    //request-hook
+    //GET GOAL
     const { loading, error, data, makeRequest } = useRequestData();
 
-    //PUT data
+    //PUT GOAL
     const { loading: loadingEdit, error: errorEdit, data: dataEdit, makeRequest: makeRequestEdit } = useRequestData();
 
     const { goalID } = useParams() // Hent nyhedes id i url'len
@@ -60,6 +59,8 @@ const GoalsEdit = () => {
 
             {/* Loading */}
             {(loading || loadingEdit) && <Loader />}
+            
+            {/* Data */}
             {data &&
                 <form onSubmit={handleSubmit} className='form-control d-flex flex-column'>
 

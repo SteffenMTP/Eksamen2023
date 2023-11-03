@@ -6,8 +6,10 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlayCircle } from '@fortawesome/free-solid-svg-icons';
 
+// IMPORT HOOK
 import useRequestData from '../hooks/useRequestData';
 
+// IMPORT AF COMPONENTS
 import Community from '../components/Community';
 import Goals from '../components/Goals';
 import Interests from '../components/Interests';
@@ -17,6 +19,7 @@ import EventSwiper from '../components/EventSwiper';
 
 const Home = () => {
 
+  // GET HEROS
   const { error, loading, data, makeRequest } = useRequestData();
 
   useEffect(() => {
@@ -40,10 +43,11 @@ const Home = () => {
             <p>{data[0].content}</p>
             <Link to="/contact"><button className='btn btn-primary'>{data[0].buttontext}</button></Link>
           </section>
+          
           <figure className='herocontainer col-12 col-md-6 position-relative'>
-          <div>
+          <button>
             <FontAwesomeIcon icon={faPlayCircle} className='PlayIcon position-absolute top-0 end-0 mt-3 mx-3' />
-          </div>
+          </button>
             <img src={"http://localhost:5888/images/hero/" + data[0].image} className='heroImg' alt="Young man standing with his mountain bike" />
           </figure>
         </div>}
