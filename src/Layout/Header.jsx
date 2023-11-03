@@ -3,11 +3,12 @@ import Error from '../components/Error';
 import Loader from '../components/Loader';
 
 // IMPORT ICONS
-import {FaBuilding, FaCalendarAlt, FaEnvelope} from 'react-icons/fa';
+import { FaBuilding, FaCalendarAlt, FaEnvelope, FaUser } from 'react-icons/fa';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 //IMPORT HOOK
 import useRequestData from '../hooks/useRequestData';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
 
@@ -33,9 +34,12 @@ const Header = () => {
                 {data && data.some &&
                     <section className='d-flex justify-content-between'>
                         <div className='ContactInfo d-flex justify-content-start'>
-                            <FaBuilding className='mt-1 m-1'/><p>Klubhuset: {data.address}</p>
-                            <FaCalendarAlt className='mt-1 m-1'/><p>{data.openinghours}</p>
-                            <FaEnvelope className='mt-1 m-1'/><p>{data.email}</p>
+                            <Link to="/admin">
+                                <FaUser className='m-1 loginbtn' />
+                            </Link>
+                            <FaBuilding className='mt-1 m-1' /><p>Klubhuset: {data.address}</p>
+                            <FaCalendarAlt className='mt-1 m-1' /><p>{data.openinghours}</p>
+                            <FaEnvelope className='mt-1 m-1' /><p>{data.email}</p>
                         </div>
                         <div className='justify-content-end'>
                             {data.some.map(d =>

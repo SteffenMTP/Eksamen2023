@@ -4,6 +4,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import Error from '../../../components/Error';
 import Loader from '../../../components/Loader';
 
+// IMPORT Hook
+import useRequestData from '../../../hooks/useRequestData';
 
 //FONT AWESOME
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -13,8 +15,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 library.add(fab, faCrown, faBiking, faMap, faHandshake)
 
-// IMPORT Hook
-import useRequestData from '../../../hooks/useRequestData';
 
 const GoalsEdit = () => {
 

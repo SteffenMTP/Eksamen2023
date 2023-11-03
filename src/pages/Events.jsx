@@ -2,6 +2,11 @@ import { React, useEffect, useState } from 'react'
 import Error from '../components/Error';
 import Loader from '../components/Loader';
 
+import Marquee from 'react-fast-marquee';
+
+// IMPORT STYLE
+import '../SASS/Pagination.scss';
+
 import { Link } from 'react-router-dom';
 // import Parse from 'html-react-parser';
 
@@ -9,6 +14,10 @@ import { Link } from 'react-router-dom';
 import useRequestData from '../hooks/useRequestData';
 
 const Events = () => {
+
+  // SETS THE AMOUNT TO BE LOOPED OUT - OBS!!! TODO MAKE IT SO THE USER CAN PICK AMOUNT
+  const [itemsPerPage, setItemsPerPage] = useState(5)
+  const [currentPage, setCurrentPage] = useState(0)
 
   // GET HERO
   const { error, loading, data, makeRequest } = useRequestData();
@@ -52,39 +61,45 @@ const Events = () => {
             {dataC.slice().reverse().map(c => (
 
               <div key={c._id}>
-                <button className='btn' onClick={()=>setCategory(c.category)}>{c.category}</button>
+                <button className='btn' onClick={() => setCategory(c.category)}>{c.category}</button>
               </div>
 
             ))}
             <div>
-                <button className='btn' onClick={()=>setCategory("")}>Fjern filter</button>
-              </div>
+              <button className='btn' onClick={() => setCategory("")}>Fjern filter</button>
+            </div>
           </div>
 
           <div className='row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2'>
-            {/* TODO SORTÉR EFTER DATO */}
-            {dataE.filter((e)=>new Date(e.eventdate) > currentDate).filter((e)=>category === "" || e.category.category === category)
-            .sort((a,b) => new Date(a.eventdate - new Date(b.eventdate))).map(e =>
+            {dataE
+              .filter((e) => new Date(e.eventdate) > currentDate).filter((e) => category === "" || e.category.category === category)
+              .sort((a, b) => new Date(a.eventdate - new Date(b.eventdate)))
+              .slice(currentPage * itemsPerPage, (currentPage * itemsPerPage) + itemsPerPage)
+              .map(e =>
 
-              <Link to={"/event/" + e._id} key={e._id} className='text-decoration-none'>
-                <div className='card h-100'>
-                  <img src={"http://localhost:5888/images/event/" + e.image} className='rounded' alt="Events" />
-                  <div className='card-body'>
-                    <p className='Highlight'>{new Date(e.eventdate).toLocaleString("da-dk", { day: "numeric", month: "long", year: "numeric" })} | Målgruppe: {e.category.category}</p>
-                    <h4 className='Bold'>{e.title}</h4>
+                <Link to={"/event/" + e._id} key={e._id} className='text-decoration-none'>
+                  <div className='card h-100'>
+                    <img src={"http://localhost:5888/images/event/" + e.image} className='rounded' alt="Events" />
+                    <div className='card-body'>
+                      <p className='Highlight'>{new Date(e.eventdate).toLocaleString("da-dk", { day: "numeric", month: "long", year: "numeric" })} | Målgruppe: {e.category.category}</p>
+                      <h4 className='Bold'>{e.title}</h4>
+                    </div>
                   </div>
-                </div>
-              </Link>
-            )}
+                </Link>
+              )}
           </div>
 
           {/* OBS!! TODO TILVALGSOPGAVE PAGINATION */}
-          <div className='Pagination my-2'>
-            <button className='btn btn-secondary me-1'>&#8592;</button>
-            <button className='btn btn-secondary me-1'>1</button>
-            <button className='btn btn-secondary me-1'>2</button>
-            <button className='btn btn-secondary me-1'>3</button>
-            <button className='btn btn-secondary me-1'>&#8594;</button>
+          <div className='Pagination my-2 col-12 col-md-12'>
+            <button className='btn btn-secondary me-1' disabled={currentPage <= 0} onClick={() => setCurrentPage(currentPage - 1)}> &lt; Forrige</button>
+
+            {
+              [...Array(Math.ceil(data.length / itemsPerPage))].map((x, i) =>
+                <button className={i === currentPage ? "active" : null} onClick={() => setCurrentPage(i)} key={i}>{i + 1}</button>
+              )
+            }
+
+            <button className='btn btn-secondary ms-1' disabled={currentPage >= Math.ceil(data.length / itemsPerPage) - 1} onClick={() => setCurrentPage(currentPage + 1)}>Næste &gt;</button>
           </div>
 
           <hr />
@@ -96,13 +111,16 @@ const Events = () => {
               <h2 className='Bold'>{data[9].title}</h2>
             </section>
             <div className='col-12 col-md-8 d-flex '>
-              {dataS.map(s =>
+              <Marquee>
 
-                <figure key={s._id}>
-                  <img src={"http://localhost:5888/images/sponsor/" + s.logo} className='sponsorlogos me-5' alt="Sponsor logos" />
-                </figure>
+                {dataS.map(s =>
 
-              )}
+                  <figure key={s._id}>
+                    <img src={"http://localhost:5888/images/sponsor/" + s.logo} className='sponsorlogos me-5' alt="Sponsor logos" />
+                  </figure>
+
+                )}
+              </Marquee>
             </div>
           </div>
 

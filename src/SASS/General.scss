@@ -15,6 +15,13 @@ html {
 $primary: $blush;
 
 // HEADER & NAV
+.loginbtn{
+    color: black;
+
+    &:hover{
+        color: $primary;
+    }
+}
 
 .SOME{
 

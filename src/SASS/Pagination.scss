@@ -1,0 +1,22 @@
+@import "variables";
+
+.Pagination {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+    button {
+        margin: 2px;
+        padding: 10px;
+        white-space: nowrap;
+        border-radius: 5px;
+    }
+    
+    
+    button.active {
+        background-color: #D45D79;;
+        color: white;
+    }
+
+
+}
