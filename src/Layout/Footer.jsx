@@ -16,7 +16,7 @@ const Footer = () => {
 
     // GET CONTACTINFORMATION
     const { error, loading, data, makeRequest } = useRequestData();
-    
+
     // GET EVENTS
     const { error: errorE, loading: loadingE, data: dataE, makeRequest: makeRequestE } = useRequestData();
 
@@ -52,11 +52,14 @@ const Footer = () => {
                         <div className="col-12 col-md-3 mb-3 text-white">
                             <h5>Kommende events</h5>
                             <hr />
-                            {dataE && dataE.slice(0, 4).map(e =>
+                            {dataE && dataE.filter((e) => new Date(e.eventdate) >= new Date()) // FILTER FOR INCOMMING EVENTS
+                                .sort((a, b) => new Date(a.eventdate) - new Date(b.eventdate)) // SORT BY THE DATE
+                                .slice(0, 4).map(e =>
+                                    <Link to={"/event/" + e._id} className='text-decoration-none text-white' id='UpCEvents'>
+                                        <p key={e._id}>&#x3E; {e.title}</p>
+                                    </Link>
 
-                                <p key={e._id}>&#x3E; {e.title}</p>
-
-                            )}
+                                )}
 
                         </div>
 
@@ -64,10 +67,10 @@ const Footer = () => {
                             <h5>Indhold</h5>
                             <hr />
                             <ul className="nav flex-column">
-                                <Link to="/aboutus" className="nav-foot-item mb-2 text-decoration-none">&#x3E; Om os</Link>
-                                <Link to="/event" className="nav-foot-item mb-2 text-decoration-none">&#x3E; Events</Link>
-                                <Link to="/contact" className="nav-foot-item mb-2 text-decoration-none">&#x3E; Kontakt</Link>
-                                <Link to="/news" className="nav-foot-item mb-2 text-decoration-none">&#x3E; Nyheder</Link>
+                                <Link to="/aboutus" className="nav-foot-item mb-2 text-decoration-none text-white">&#x3E; Om os</Link>
+                                <Link to="/event" className="nav-foot-item mb-2 text-decoration-none text-white">&#x3E; Events</Link>
+                                <Link to="/contact" className="nav-foot-item mb-2 text-decoration-none text-white">&#x3E; Kontakt</Link>
+                                <Link to="/news" className="nav-foot-item mb-2 text-decoration-none text-white">&#x3E; Nyheder</Link>
                             </ul>
                         </div>
 
